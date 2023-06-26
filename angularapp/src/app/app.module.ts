@@ -15,6 +15,7 @@ import { QueriesComponent } from './adminmodule/inqueries/queries.component';
 import { AddpropertyComponent } from './adminmodule/addproperty/addproperty.component';
 import { AdminnavbarComponent } from './adminmodule/adminnavbar/adminnavbar.component';
 import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component'
     QueriesComponent,
     AddpropertyComponent,
     AdminnavbarComponent,
-    InquiriesComponent
+    InquiriesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
