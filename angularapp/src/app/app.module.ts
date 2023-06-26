@@ -11,7 +11,10 @@ import { AdminloginComponent } from './adminmodule/adminlogin/adminlogin.compone
 import { EditpropertyComponent } from './adminmodule/editproperty/editproperty.component';
 import { EditusersComponent } from './adminmodule/editusers/editusers.component';
 import { EditagentsComponent } from './adminmodule/editagents/editagents.component';
-import { QueriesComponent } from './adminmodule/queries/queries.component';
+import { QueriesComponent } from './adminmodule/inqueries/queries.component';
+import { AddpropertyComponent } from './adminmodule/addproperty/addproperty.component';
+import { AdminnavbarComponent } from './adminmodule/adminnavbar/adminnavbar.component';
+import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { QueriesComponent } from './adminmodule/queries/queries.component';
     EditpropertyComponent,
     EditusersComponent,
     EditagentsComponent,
-    QueriesComponent
+    QueriesComponent,
+    AddpropertyComponent,
+    AdminnavbarComponent,
+    InquiriesComponent
   ],
   imports: [
     BrowserModule,
