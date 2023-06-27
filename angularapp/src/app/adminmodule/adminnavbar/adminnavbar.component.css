@@ -1,0 +1,23 @@
+.nav-item, .nav-link{
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    background-color: transparent;
+    border-color: black;
+    border-radius: 25px;
+    cursor:pointer;
+    padding: 15px;
+    font-weight: bold;
+    color: black;
+}
+.nav-link:hover{
+   background-color: rgb(57, 72, 103);
+   border-radius: 25px;
+   color: rgb(255, 255, 255);
+}
+.container-fluid{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+

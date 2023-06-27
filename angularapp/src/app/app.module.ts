@@ -11,11 +11,10 @@ import { AdminloginComponent } from './adminmodule/adminlogin/adminlogin.compone
 import { EditpropertyComponent } from './adminmodule/editproperty/editproperty.component';
 import { EditusersComponent } from './adminmodule/editusers/editusers.component';
 import { EditagentsComponent } from './adminmodule/editagents/editagents.component';
-import { QueriesComponent } from './adminmodule/inqueries/queries.component';
-import { AddpropertyComponent } from './adminmodule/addproperty/addproperty.component';
+
 import { AdminnavbarComponent } from './adminmodule/adminnavbar/adminnavbar.component';
 import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { PagesComponent } from './pages/pages.component';
 import { SharepagesComponent } from './sharepages/sharepages.component';
 import { AgentloginComponent } from './pages/agentlogin/agentlogin.component';
@@ -36,10 +35,8 @@ import { FooterComponent } from './sharepages/footer/footer.component';
     EditpropertyComponent,
     EditusersComponent,
     EditagentsComponent,
-    QueriesComponent,
-    AddpropertyComponent,
-    AdminnavbarComponent,
     InquiriesComponent,
+    AdminnavbarComponent,
     HomeComponent,
     PagesComponent,
     SharepagesComponent,

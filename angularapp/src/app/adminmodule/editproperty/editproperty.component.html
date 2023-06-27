@@ -1,1 +1,47 @@
-<p>editproperty works!</p>
+<div class="container1">
+    <app-adminnavbar></app-adminnavbar>
+    <div class="input-group">
+      <input class="form-control" type="text" placeholder="Search" >
+    </div>
+    <div class="addbtn">
+    <button type="button" class="addbutton" data-bs-toggle="modal" data-bs-target="#exampleModal"> Add New Property </button>
+    </div>
+      <div class="card-container">
+        <div class="card" *ngFor = "let item of propertylist; index as id">
+        <img class="property-image" [src]="item.img"alt="Property">
+        <div class="property-id"><label>Id no.  </label>{{id+1}}</div>
+        <div class="property-type"><label>Type: </label>{{item.type}}</div>
+        <div class="property-description"><label>Description : </label>{{item.description}}</div>
+        <div class="location"><label>Location : </label>{{item.location}}</div>
+        <div class="price"><label>Price : </label>{{item.price }}</div>
+        <button class="visit-button"  data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+        <button class="delete-button" (click)="ondelete(id)">Delete</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="margin-top: 1%; width: 100%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-3" id="exampleModalLabel">Add Property Here !</h1>
+          </div>
+          <div class="modal-body">
+            <form>
+            <div #mydata class="logs">
+            <label for="type">Type:</label><div><input></div><br>
+            <label for="description">Description: </label><div><input></div><br>
+            <label for="location">Location: </label><div><input></div><br>
+            <label for="price">Price:</label><div><input></div><br>
+            <label for="image">Image:</label><div><input type="image" alt="Drag and Drop here"> </div>
+            </div>
+            </form>
+            <div class="modal-footer">
+           <div class="close"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div>
+            <button type="button" class="btn btn-primary" (click)="onclick(mydata)">Add Property</button>
+          </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>

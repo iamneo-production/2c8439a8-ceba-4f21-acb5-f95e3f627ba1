@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
+.a{
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight:900;
+}
+.b{
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-weight:900;
+}
+form {
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    font-weight:900;
+}
+
+.ans-button {
+    padding: 10px 30px;
+    background-color: #212A3E ;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+  }
+  
+.ans-button:hover {
+    background-color: #6e87b9 ;
+  }

@@ -1,1 +1,39 @@
-<p>editusers works!</p>
+<div class="container1">
+    <app-adminnavbar></app-adminnavbar>
+    <div class="option">
+    <button class="user" routerLink="/editusers">Users</button><button class="agent" routerLink="/editagent">Agents</button>
+    </div>
+    <div class="container2">
+    
+    <table class="table">
+      <thead>
+        <tr class="a">
+          <th scope="col">Id no.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Acc created on</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+        <tbody>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="b" *ngFor="let item of users; index as id">
+            <td>{{id+1}}</td>
+            <td>{{item.Name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.acc}}</td>
+            <td><button class="delete-button" (click)="ondelete(id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
