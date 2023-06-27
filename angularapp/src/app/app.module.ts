@@ -16,6 +16,14 @@ import { AddpropertyComponent } from './adminmodule/addproperty/addproperty.comp
 import { AdminnavbarComponent } from './adminmodule/adminnavbar/adminnavbar.component';
 import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component';
 import { HomeComponent } from './home/home.component';
+import { PagesComponent } from './pages/pages.component';
+import { SharepagesComponent } from './sharepages/sharepages.component';
+import { AgentloginComponent } from './pages/agentlogin/agentlogin.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UseraccountComponent } from './pages/useraccount/useraccount.component';
+import { NavbarComponent } from './sharepages/navbar/navbar.component';
+import { FooterComponent } from './sharepages/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +40,15 @@ import { HomeComponent } from './home/home.component';
     AddpropertyComponent,
     AdminnavbarComponent,
     InquiriesComponent,
-    HomeComponent
+    HomeComponent,
+    PagesComponent,
+    SharepagesComponent,
+    AgentloginComponent,
+    ContactComponent,
+    LoginComponent,
+    UseraccountComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
