@@ -1,0 +1,39 @@
+.options{
+    display: flex;
+    margin-right: 20px;
+}
+#unorder-list{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.links{
+    text-decoration: none;
+}
+a {font-size: 20px}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+#fname{
+    border-radius: 7px;
+    height: 30px;
+    width: 70%;
+    margin-right: 35px;
+    padding-left: 10px;
+}
+
+.headerButton{
+    border-radius: 7px;
+    height: 30px;
+    padding: 7px;
+    background-color: #2d2f4e;
+    color: white;
+}

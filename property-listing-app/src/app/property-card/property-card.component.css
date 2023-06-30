@@ -1,0 +1,11 @@
+.property-card{
+    min-width: 290px;
+    padding: 30px;
+    background-color: #a2acca;
+}
+.visit-now{
+    width: 100%;
+    padding: 15px;
+    background-color: #2d2f4e;
+    margin-bottom: 7px;
+}

@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<div class="grid">
+  <div id="filter">
+    <section>
+      <p style="justify-content: center; display: flex;">Filters</p>
+    </section>
+    <hr>
+    <h3 style="margin-left: 4px;"> Price Range (In Lakhs)</h3>
+    <p style="justify-content: center; display: flex;">Minimum Price</p>
+    <input type="text" id="fname" name="fname" style="margin-left: 20%;">
+    <p style="justify-content: center; display: flex;">to</p>
+    <p style="justify-content: center; display: flex;">Maximum Price</p>
+    <input type="text" id="fname" name="fname" style="margin-left: 20%; margin-bottom: 10px;">
+    <hr>
+    <h3 style="margin-left: 4px;"> Location</h3>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1">Bengaluru</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2">Chennai</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> Hyderabad</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> Delhi</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> Gurgaon</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> Mumbai</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> Pune</label><br><br>
+
+    <hr>
+    <h3 style="margin-left: 4px;"> Types of Property</h3>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1">residential</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2">commercial</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> industrial</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> raw land</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> special</label><br>
+    <button type="button"class="headerButton">Apply</button>
+  </div>
+  <div class="property-grid">
+    <app-property-card imagePath="assets/propertyImage.jpg"></app-property-card>
+    <app-property-card imagePath="assets/image1.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image2.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image3.jpeg"></app-property-card>
+    <!-- Repeat the above line to add more property cards -->
+    <app-property-card imagePath="assets/image4.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image5.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image6.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/propertyImage.jpg"></app-property-card>
+    <app-property-card imagePath="assets/image1.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image2.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image3.jpeg"></app-property-card>
+    <!-- Repeat the above line to add more property cards -->
+    <app-property-card imagePath="assets/image4.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image5.jpeg"></app-property-card>
+    <app-property-card imagePath="assets/image6.jpeg"></app-property-card>
+  </div>
+</div>

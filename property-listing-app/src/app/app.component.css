@@ -1,0 +1,27 @@
+.property-grid {
+  width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .grid{
+    display: flex;
+  }
+
+  #filter{
+    width: 20%;
+    background-color: white;
+    margin-top: 12px;
+    padding-left: 10px;
+  }
+  .headerButton{
+   
+    margin: 15px;
+    border-radius: 7px;
+    padding: 10px;
+    background-color: #2d2f4e;
+    color: white;
+    width: 50%;
+}
+  

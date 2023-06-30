@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+/* Add property-card styles */
+.property-card {
+    background-color: grey;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .property-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+  }
+  
+  .property-details {
+    margin-top: 10px;
+  }
+  
+  .property-details h2,
+  .property-details p {
+    margin: 5px 0;
+  }
+  
+  .visit-now {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
