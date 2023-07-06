@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./editusers.component.css']
 })
 export class EditusersComponent {
-
+  searchText = '';
 users = [
   
     {
@@ -42,5 +42,41 @@ users = [
 
   ondelete(deleteme: any) {
      this.users.splice(deleteme,1) 
+  }
+
+  agents = [
+  
+    {
+      Name: 'Mark',
+      email: 'mark@gmail.com',
+      phone: '9876543210',
+      exp: '8',
+    },
+
+    {
+      Name: 'Sam',
+      email: 'sam@gmail.com',
+      phone: '9321654870',
+      exp: '8',
+    },
+        
+    {
+      Name: 'Antony',
+      email: 'antony@gmail.com',
+      phone: '8765422210',
+      exp: '7',
+    },
+
+    {
+      Name: 'Andrew',
+      email: 'andrew@gmail.com',
+      phone: '7564422210',
+      exp: '7',
+    },
+
+    
+  ];
+    ondel(deleteme: any) {
+     this.agents.splice(deleteme,1) 
   }
 }

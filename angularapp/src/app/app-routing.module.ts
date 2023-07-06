@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { EditagentsComponent } from './adminmodule/editagents/editagents.component';
 import { AdminmoduleComponent } from './adminmodule/adminmodule.component';
 import { EditpropertyComponent } from './adminmodule/editproperty/editproperty.component';
 import { EditusersComponent } from './adminmodule/editusers/editusers.component';
 import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component';
+import { AdminloginComponent } from './adminmodule/adminlogin/adminlogin.component';
+import { AddpropertyComponent } from './adminmodule/addproperty/addproperty.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  { path: '', component: HomeComponent },
+  {path:'', component: AdminloginComponent},
   { path: 'editproperty' , component: EditpropertyComponent},
   { path: 'editusers' , component: EditusersComponent},
-  { path: 'editagent' , component: EditagentsComponent},
-  { path: 'query' , component: InquiriesComponent}
+  { path: 'query' , component: InquiriesComponent},
+  { path: 'adminlogin' , component: AdminloginComponent},
+  { path: 'add' , component: AddpropertyComponent},
 ];
 
 @NgModule({

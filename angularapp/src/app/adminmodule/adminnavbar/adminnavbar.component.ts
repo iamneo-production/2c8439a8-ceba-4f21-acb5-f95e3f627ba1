@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./adminnavbar.component.css']
 })
 export class AdminnavbarComponent {
-
+  searchText='';
 }

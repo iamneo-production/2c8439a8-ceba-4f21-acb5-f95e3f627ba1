@@ -1,39 +1,76 @@
-<div class="container1">
-    <app-adminnavbar></app-adminnavbar>
+<app-adminnavbar></app-adminnavbar>
+
+<div class="table-responsive container2">
+  <div class="option">
+    <h2 class="list">User's List</h2>
+  </div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr class="a">
+        <th scope="col">Sl no.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Acc created on</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="b" *ngFor="let item of users; index as id">
+        <td>{{id+1}}</td>
+        <td>{{item.Name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.acc}}</td>
+        <td><button class="delete-button" (click)="ondelete(id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<div class="table-responsive container2">
     <div class="option">
-    <button class="user" routerLink="/editusers">Users</button><button class="agent" routerLink="/editagent">Agents</button>
+      <h2 class="list">Agent's List</h2>
     </div>
-    <div class="container2">
-    
+    <br>
     <table class="table">
-      <thead>
-        <tr class="a">
-          <th scope="col">Id no.</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Acc created on</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-        <tbody>
+        <thead>
+            <tr class="a">
+                <th scope="col">Sl no.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Experiance</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody style="font-style: 'Abel', sans-serif;">
             <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="b" *ngFor="let item of users; index as id">
-            <td>{{id+1}}</td>
-            <td>{{item.Name}}</td>
-            <td>{{item.email}}</td>
-            <td>{{item.phone}}</td>
-            <td>{{item.acc}}</td>
-            <td><button class="delete-button" (click)="ondelete(id)">Delete</button>
-            </td>
-          </tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="b" *ngFor="let item of agents; index as id">
+                <td>{{id+1}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.exp}}</td>
+                <td><button class="delete-button" (click)="ondel(id)">Delete</button>
+                </td>
+            </tr>
         </tbody>
     </table>
-    </div>

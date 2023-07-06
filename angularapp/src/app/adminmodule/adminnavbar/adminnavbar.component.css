@@ -1,23 +1,55 @@
-.nav-item, .nav-link{
-    font-family: 'Abel', sans-serif;
+.nav-item,
+.nav-link {
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     background-color: transparent;
     border-color: black;
     border-radius: 25px;
-    cursor:pointer;
-    padding: 15px;
-    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 700;
+    color: black;
+
+}
+
+.nav-link:hover {
+    font-weight: 500;
+}
+
+.container-fluid {
+    margin-top: -25px;
+}
+
+.d-flex {
+    width: 39%;
+}
+
+.form-control {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: black;
+    width: 80%;
+    height: 40px;
+    border-radius: 15px;
+    border-color: black;
+    margin: 0% 5%;
+}
+
+.btn {
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 700;
     color: black;
 }
-.nav-link:hover{
-   background-color: rgb(57, 72, 103);
-   border-radius: 25px;
-   color: rgb(255, 255, 255);
-}
-.container-fluid{
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+.dropdown-menu {
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
-
+.dropdown-item:hover {
+    background-color: lightgrey;
+}

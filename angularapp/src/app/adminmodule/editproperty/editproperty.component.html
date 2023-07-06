@@ -1,47 +1,134 @@
-<div class="container1">
-    <app-adminnavbar></app-adminnavbar>
-    <div class="input-group">
-      <input class="form-control" type="text" placeholder="Search" >
-    </div>
-    <div class="addbtn">
-    <button type="button" class="addbutton" data-bs-toggle="modal" data-bs-target="#exampleModal"> Add New Property </button>
-    </div>
-      <div class="card-container">
-        <div class="card" *ngFor = "let item of propertylist; index as id">
-        <img class="property-image" [src]="item.img"alt="Property">
-        <div class="property-id"><label>Id no.  </label>{{id+1}}</div>
-        <div class="property-type"><label>Type: </label>{{item.type}}</div>
-        <div class="property-description"><label>Description : </label>{{item.description}}</div>
-        <div class="location"><label>Location : </label>{{item.location}}</div>
-        <div class="price"><label>Price : </label>{{item.price }}</div>
-        <button class="visit-button"  data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-        <button class="delete-button" (click)="ondelete(id)">Delete</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" style="margin-top: 1%; width: 100%;">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-3" id="exampleModalLabel">Add Property Here !</h1>
-          </div>
-          <div class="modal-body">
-            <form>
-            <div #mydata class="logs">
-            <label for="type">Type:</label><div><input></div><br>
-            <label for="description">Description: </label><div><input></div><br>
-            <label for="location">Location: </label><div><input></div><br>
-            <label for="price">Price:</label><div><input></div><br>
-            <label for="image">Image:</label><div><input type="image" alt="Drag and Drop here"> </div>
+
+<div class="container2">
+    <div class="row row-cols-1 row-cols-md-2 g-4 pb-4 card-con">
+        <div class="card-deck" *ngFor="let item of propertylist">
+            <div class="card bg">
+                <div class="row flex-column flex-xl-row">
+                    <div class="col">
+                       <img class="img-fluid rounded-start h-100 " [src]="item.imageUrls"alt="Property img">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p class="card-title fs-3 fw-bold mb-1">₹ {{item.price}}</p>
+                            </div>
+                            <span class="badge text-bg-primary mb-1 me-1 rounded-pill">{{item.type}}</span><span class="badge text-bg-primary mb-1 rounded-pill">{{item.status}}</span>
+                            <p class="card-title fs-5 fw-bold">{{item.title}}</p>
+                            <p class="card-title fw-bold">Id number : 
+                                <small class="text-muted">{{item.id}}</small>
+                            </p>
+                            <p class="card-title fw-bold">Location : 
+                                <small class="text-muted">{{item.location}}</small>
+                            </p>
+                            <p class="card-title fw-bold">Features : 
+                                <small class="text-muted">{{item.features}}</small>
+                            </p>
+                            <div class="row  g-1">
+                                <button class="btn btn-primary col-7" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onedit(item.id)">Edit</button>
+                                <div class="col-1"></div>
+                                <button class="btn btn-danger col-4"  data-bs-toggle="modal" data-bs-target="#deleteModel" type="button">Delete</button>
+                                <div class="modal fade" id="deleteModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Property</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          Are you sure to delete this property ?
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          <button type="button" class="btn btn-danger" (click)="ondelete(item.id)"  data-bs-dismiss="modal">Confirm Delete</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-3" id="exampleModalLabel">Edit Property Here !</h1>
+        </div>
+        <div class="modal-body">
+
+            <form class="row g-3 w-100">
+                <div class="col-md-6">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.title" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Type</label>
+                    <select id="inputType" class="form-select" [(ngModel)]="property.type" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="House">House</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Condo">Condo</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Price</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.price" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.address" [ngModelOptions]="{standalone: true}">
+                </div>
+            
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Location</label>
+                    <select id="inputState" class="form-select" [(ngModel)]="property.location" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Tirupur">Tirupur</option>
+                        <option value="Mysore">Mysore</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Features</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.features" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Status</label>
+                    <select id="inputState" class="form-select" [(ngModel)]="property.status" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="On Sale">On Sale</option>
+                        <option value="Sold">Sold</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Image Url</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.imageUrls" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Video Url</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.videoUrls" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Agent</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.agent" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputZip" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" [(ngModel)]="property.description" [ngModelOptions]="{standalone: true}"></textarea>
+                </div>
             </form>
-            <div class="modal-footer">
-           <div class="close"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div>
-            <button type="button" class="btn btn-primary" (click)="onclick(mydata)">Add Property</button>
-          </div>
-          </div>
-          
+        </div>
+        <div class="modal-footer">
+         <div class="close"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div>
+          <button type="button" class="btn btn-primary" (click)="onSubmit()" data-bs-dismiss="modal">Submit</button>
         </div>
       </div>
     </div>
+  </div>
+
+ -->

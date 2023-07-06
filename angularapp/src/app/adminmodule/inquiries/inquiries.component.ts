@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./inquiries.component.css']
 })
 export class InquiriesComponent {
-
+  searchText='';
 }
