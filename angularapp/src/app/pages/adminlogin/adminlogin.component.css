@@ -1,0 +1,154 @@
+
+
+li,button{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    color:black;
+    text-decoration: none;
+}
+
+header{
+    height: 80px;
+    display:flex;
+    justify-content: flex;
+    padding:3px 2%;
+    margin-top: 15px;
+    
+}
+
+.logos{
+    display: inline-flex;
+    cursor: pointer;
+    margin-top: -4px;
+    margin-left: 30px;
+    
+}
+
+.nav_links{
+    list-style: none;
+    margin-top: 0px;
+    padding-right: 350px;
+    padding-left: 320px;
+}
+
+.nav_links li{
+
+    display: inline-block;
+    padding:10px 10px;
+}
+
+.login{
+    border-radius: 25px;
+    font-size: large;
+     list-style: none;
+    margin-top: -78px;
+    cursor: pointer;
+    padding: 0%;
+    margin-left: 1180px;
+   
+}
+
+.admin{
+	 border-radius: 25px;
+    font-size: large;
+     list-style: none;
+    margin-top: -65px;
+    cursor: pointer;
+    padding: 0%;
+    margin-left: 1080px;
+}
+.admin button{
+    
+    background-color: rgb(202, 202, 202);
+}
+.agent{
+	 border-radius: 25px;
+    font-size: large;
+     list-style: none;
+    margin-top: -50px;
+    cursor: pointer;
+    padding: 0%;
+    margin-left: 980px;
+}
+button{
+    font-size: large;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 25px;
+    cursor:pointer;
+    padding: 10px;
+
+}
+
+button:hover{
+    background-color: transparent;
+    border-color:black ;
+}
+
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+	padding: 0;
+    margin-top: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+}
+
+
+
+.logbutton{
+    font-family: 'Abel', sans-serif;
+    width: 80%;
+	height: 50px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #212A3E ;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+}
+.logbutton:hover{
+    background: #394867 ;
+}
+
+input{
+	width: 80%;
+	height: 40px;
+	background: #ffffff;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 15px;
+}
+
+.login1{
+width: 350px;
+	height: 350px;
+	overflow: hidden;
+	border-radius: 30px;
+    margin-bottom: 0%;
+    background-color: #9BA4B5 ;
+	box-shadow: 5px 20px 50px #000;
+}
+.login1 label{
+    font-family: 'Abel', sans-serif;
+	color: #000000;
+    font-size: 38px;
+    justify-content: center;
+	display: flex;
+	margin-top: 50px;
+	font-weight: bold;
+}
+
