@@ -8,6 +8,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.realestateapi.backend.repository.AdminRepository;
+
+import java.util.Optional;
+
 import com.realestateapi.backend.entity.Admin;
 
 
@@ -30,7 +33,11 @@ public class AdminService {
         Optional<Admin> admin = adminRepository.findByName(username);
         if(admin != null) {
             return passwordEncoder.matches(password, admin.orElseThrow().getPassword());
+<<<<<<< HEAD
         }else {
+=======
+        } else {
+>>>>>>> a5c9bb310547f6e78cd128f0becfdb51264129a0
             return false;
         }
     }

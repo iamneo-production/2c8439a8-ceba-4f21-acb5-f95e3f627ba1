@@ -80,6 +80,7 @@ public class MainController {
 
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(auth.getUsername(), auth.getPassword()));
 
+<<<<<<< HEAD
         if(service.checkPassword(auth.getUsername(), auth.getPassword())) {
             if(authentication.isAuthenticated()) {
                 return jwtService.generateToken(auth.getUsername());
@@ -88,6 +89,18 @@ public class MainController {
             }
         }else {
                 throw new UsernameNotFoundException("Invalid Username or Password");
+=======
+        if(service.checkPassword(auth.getUsername(), auth.getPassword()))
+        {    if(authentication.isAuthenticated()) {
+
+                return jwtService.generateToken(auth.getUsername());
+
+            } else {
+                throw new UsernameNotFoundException("Invalid Username or Password");
+            }
+        } else {
+            throw new UsernameNotFoundException("Invalid Username or Password");
+>>>>>>> a5c9bb310547f6e78cd128f0becfdb51264129a0
         }
     }
 
