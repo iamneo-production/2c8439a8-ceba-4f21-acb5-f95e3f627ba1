@@ -13,7 +13,8 @@ import com.realestateapi.backend.entity.Admin;
 
 public class AdminInfoUserDetails implements UserDetails {
 
-    private String name,password;
+    private String name;
+    private String password;
     private List<GrantedAuthority> authorities;
 
     public AdminInfoUserDetails(Admin admin) {
