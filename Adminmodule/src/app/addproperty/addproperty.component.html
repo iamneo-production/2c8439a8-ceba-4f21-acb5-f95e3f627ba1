@@ -1,0 +1,71 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div class="container2">
+    <form class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="property.title" [ngModelOptions]="{standalone: true}" >
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Type</label>
+            <select id="inputType" class="form-select" [(ngModel)]="property.type" [ngModelOptions]="{standalone: true}">
+                <option selected>Choose...</option>
+                <option value="House">House</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Condo">Condo</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Price</label>
+            <input type="text" class="form-control" [(ngModel)]="property.price" [ngModelOptions]="{standalone: true}">
+        </div>
+        
+        <div class="col-md-6">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" [(ngModel)]="property.address" [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="col-md-2">
+            <label for="inputState" class="form-label">Location</label>
+            <select id="inputState" class="form-select" [(ngModel)]="property.location" [ngModelOptions]="{standalone: true}">
+                <option selected>Choose...</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Tirupur">Tirupur</option>
+                <option value="Mysore">Mysore</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="inputCity" class="form-label">Features</label>
+            <input type="text" class="form-control" [(ngModel)]="property.features" [ngModelOptions]="{standalone: true}">
+          </div>
+        <div class="col-md-3">
+            <label for="inputState" class="form-label">Status</label>
+            <select id="inputState" class="form-select" [(ngModel)]="property.status" [ngModelOptions]="{standalone: true}">
+                <option selected>Choose...</option>
+                <option value="On Sale">On Sale</option>
+                <option value="Sold">Sold</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="inputImage" class="form-label">Image Url</label>
+            <input type="file" class="form-control" [(ngModel)]="property.imageUrls" [ngModelOptions]="{standalone: true}">
+          </div>
+        <div class="col-md-3">
+            <label for="inputZip" class="form-label">Video Url</label>
+            <input type="text" class="form-control" [(ngModel)]="property.videoUrls" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-3">
+            <label for="inputZip" class="form-label">Agent</label>
+            <input type="text" class="form-control" [(ngModel)]="property.agents" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-12">
+            <label for="inputZip" class="form-label">Description</label>
+            <textarea type="text" class="form-control" [(ngModel)]="property.description" [ngModelOptions]="{standalone: true}"></textarea>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+            
+          <button type="submit" class="btn btn-primary col-4" (click)="onSubmit()" [disabled]="isValid()">Add this Property</button>
+          
+        </div>
+      </form>
+</div>

@@ -17,11 +17,12 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.bind.annotation.RequestParam;
 // import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.realestateapi.backend.entity.Admin;
+import com.realestateapi.backend.entity.Auth;
 import com.realestateapi.backend.service.AdminService;
 import com.realestateapi.backend.service.JwtService;
 
@@ -75,16 +76,18 @@ public class MainController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password) {
+    public String login(@RequestBody Auth auth) {
 
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(auth.getUsername(), auth.getPassword()));
 
-        if(authentication.isAuthenticated()) {
-
-            return jwtService.generateToken(username);
-
-        } else {
-            throw new UsernameNotFoundException("Invalid Username or Password");
+        if(service.checkPassword(auth.getUsername(), auth.getPassword())) {
+            if(authentication.isAuthenticated()) {
+                return jwtService.generateToken(auth.getUsername());
+            }else {
+                throw new UsernameNotFoundException("Invalid Username or Password");
+            }
+        }else {
+                throw new UsernameNotFoundException("Invalid Username or Password");
         }
     }
 

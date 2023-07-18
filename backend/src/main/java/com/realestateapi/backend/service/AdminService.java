@@ -1,6 +1,8 @@
 package com.realestateapi.backend.service;
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,15 @@ public class AdminService {
         admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         adminRepository.save(admin);
         return "User Successfully Saved";
+    }
+
+    public boolean checkPassword(String username, String password) {
+        Optional<Admin> admin = adminRepository.findByName(username);
+        if(admin != null) {
+            return passwordEncoder.matches(password, admin.orElseThrow().getPassword());
+        }else {
+            return false;
+        }
     }
 
 }

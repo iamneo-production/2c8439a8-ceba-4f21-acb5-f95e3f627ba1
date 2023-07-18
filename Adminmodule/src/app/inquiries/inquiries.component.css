@@ -1,0 +1,38 @@
+
+.a{
+  font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight:500;
+}
+.b, .form-label{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    font-weight:700;
+}
+.form-control {
+  font-family: 'Open Sans', sans-serif;
+    font-weight:500;
+}
+
+.ans-button {
+    padding: 10px 30px;
+    background-color: rgb(58, 121, 204) ;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+  }
+  
+.ans-button:hover {
+    background-color: #6e87b9 ;
+  }
+
+.card-header{
+  font-family: 'Open Sans', sans-serif;
+  background-color: aliceblue;
+}
+
+.card-body,.answer{
+  font-family: 'Open Sans', sans-serif;
+}

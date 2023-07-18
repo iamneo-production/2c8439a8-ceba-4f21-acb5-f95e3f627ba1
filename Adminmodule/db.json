@@ -1,0 +1,74 @@
+{
+  "property": [
+      {
+          "id": "01",
+          "title": "Property1" ,
+          "description":  "2Bedroom",
+          "address": "123A, V street, ASD, Chennai.",
+          "price": 100000,
+          "type": "Apartment",
+          "location": "Chennai",
+          "is_available": true,
+          "img": "./assets/house.jpg",
+          "agent": "AgentName"
+      },
+      {
+          "id": "02",
+          "title": "Property2" ,
+          "description":  "3Bedroom",
+          "address": "23A, V street, ASD, Chennai.",
+          "price": 500000,
+          "type": "Apartment",
+          "location": "Chennai",
+          "is_available": true,
+          "img": "./assets/house.jpg",
+          "agent": "AgentName"
+      },
+      {
+          "id": "03",
+          "title": "Property3" ,
+          "description":  "1Bedroom",
+          "address": "13A, l street, ASD, Chennai.",
+          "price": 150000,
+          "type": "Apartment",
+          "location": "Tirupur",
+          "is_available": true,
+          "img": "./assets/house.jpg",
+          "agent": "AgentName"
+      },
+      {
+          "id": "04",
+          "title": "Property4" ,
+          "description":  "2Bedroom",
+          "address": "12, u street, ASD, Chennai.",
+          "price": 200000,
+          "type": "House",
+          "location": "Chennai",
+          "is_available": true,
+          "img": "./assets/house.jpg",
+          "agent": "AgentName"
+      },
+      {
+          "id": "05",
+          "title": "Property5" ,
+          "description":  "5Bedroom",
+          "address": "12u, i street, ASD, Chennai.",
+          "price": 1000000,
+          "type": "House",
+          "location": "Chennai",
+          "is_available": true,
+          "img": "./assets/house.jpg",
+          "agent": "AgentName"
+      }
+  ],
+  "comments": [
+      {
+          "id": 1,
+          "body": "some comment",
+          "postId": 1
+      }
+  ],
+  "profile": {
+      "name": "typicode"
+  }
+}
