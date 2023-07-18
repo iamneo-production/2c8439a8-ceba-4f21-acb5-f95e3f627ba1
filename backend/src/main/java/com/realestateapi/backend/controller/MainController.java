@@ -75,14 +75,18 @@ public class MainController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password) {
+    public String login(@RequestBody Auth auth) {
 
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(auth.getUsername(), auth.getPassword()));
 
-        if(authentication.isAuthenticated()) {
+        if(service.checkPassword(auth.getUsername(), auth.getPassword()))
+        {    if(authentication.isAuthenticated()) {
 
-            return jwtService.generateToken(username);
+                return jwtService.generateToken(auth.getUsername());
 
+            } else {
+                throw new UsernameNotFoundException("Invalid Username or Password");
+            }
         } else {
             throw new UsernameNotFoundException("Invalid Username or Password");
         }
