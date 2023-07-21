@@ -1,6 +1,6 @@
 package com.example.springapp.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 
 

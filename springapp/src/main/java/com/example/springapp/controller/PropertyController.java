@@ -1,4 +1,4 @@
-package com.example.springapp.contoller;
+package com.example.springapp.controller;
 
 import com.example.springapp.model.Property;
 import com.example.springapp.service.PropertyService;

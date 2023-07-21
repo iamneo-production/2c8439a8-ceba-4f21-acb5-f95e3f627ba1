@@ -1,4 +1,4 @@
-package com.example.springapp.contoller;
+package com.example.springapp.controller;
 import com.example.springapp.model.UserModel;
 import com.example.springapp.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;

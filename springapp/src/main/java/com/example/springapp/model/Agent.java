@@ -1,10 +1,12 @@
 package com.example.springapp.model;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -26,6 +28,6 @@ public class Agent {
     @Column(name = "Phone")
     private String phone;
 
-    @Column(name = "Profile Image")
+    @Column(name = "Profile_Image")
     private String profileImageUrl;
 }
