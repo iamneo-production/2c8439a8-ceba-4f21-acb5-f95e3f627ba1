@@ -1,4 +1,4 @@
-package com.example.springapp.contoller;
+package com.example.springapp.controller;
 import com.example.springapp.model.UserModel;
 import com.example.springapp.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,27 +7,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/users")
 public class UserModelController {
 
     @Autowired
     private UserInfoService userinfoService;
 
     // Get all users
-    @GetMapping("/Users")
+    @GetMapping
     public List<UserModel> getAllUsers(){
         return userinfoService.getAllusers();
     }
 
     // Add a new user or admin
-    @PostMapping("/addUser")
+    @PostMapping
     public String addUser(@RequestBody UserModel user){
         userinfoService.addUser(user);
         return "User/Admin added";
     }
 
     // Edit an existing user or admin by userId
-    @PutMapping("/editUser/{userId}")
+    @PutMapping("/{userId}")
     public ResponseEntity<UserModel> editUser(@PathVariable long userId, @RequestBody UserModel user){
         UserModel allUsers = userinfoService.getElementsByuserId(userId);
         allUsers.setEmail(user.getEmail());
@@ -40,7 +40,7 @@ public class UserModelController {
     }
 
     // Delete a user or admin by userId
-    @DeleteMapping("/deleteUser/{userId}")
+    @DeleteMapping("/{userId}")
     public String deleteUser(@PathVariable long userId) {
         userinfoService.deleteUser(userId);
         return "User/Admin deleted";
@@ -54,7 +54,7 @@ public class UserModelController {
     }
 
     // Get user details by userId
-    @GetMapping("/getUser/{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<UserModel> getcustomerByuserId(@PathVariable long userId) {
         UserModel customer= userinfoService.getElementsByuserId(userId);
         return ResponseEntity.ok(customer);

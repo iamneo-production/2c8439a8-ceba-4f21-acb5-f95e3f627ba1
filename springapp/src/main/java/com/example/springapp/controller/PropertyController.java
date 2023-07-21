@@ -1,4 +1,4 @@
-package com.example.springapp.contoller;
+package com.example.springapp.controller;
 
 import com.example.springapp.model.Property;
 import com.example.springapp.service.PropertyService;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/property")
+@RequestMapping("/properties")
 @CrossOrigin("http://localhost:4200")
 public class PropertyController {
 

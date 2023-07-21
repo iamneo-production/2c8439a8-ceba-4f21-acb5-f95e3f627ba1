@@ -1,4 +1,4 @@
-package com.example.springapp.contoller;
+package com.example.springapp.controller;
 
 import com.example.springapp.model.Agent;
 import com.example.springapp.service.AgentService;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/agents")
+@RequestMapping("/agents")
 @CrossOrigin("http://localhost:4200")
 public class AgentController {
     @Autowired

@@ -1,6 +1,5 @@
-package com.example.springapp.contoller;
+package com.example.springapp.controller;
 
-import com.example.springapp.exception.ResourceNotFoundException;
 import com.example.springapp.model.Inquiry;
 import com.example.springapp.service.InquiryService;
 import org.jetbrains.annotations.NotNull;
