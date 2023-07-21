@@ -14,19 +14,23 @@ public class PropertyService {
     @Autowired
     private PropertyRepository propertyRepository;
 
+    // Get all properties from the database
     public List<Property> getAllProperty() {
         return propertyRepository.findAll();
     }
 
+    // Create a new property and save it in the database
     public Property createProperty(Property property) {
         return propertyRepository.save(property);
     }
 
+    // Get a property by its ID from the database
     public Property getPropertyById(long id) {
         return propertyRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Property not found with id: " + id));
     }
 
+    // Update an existing property with the provided property details
     public Property updateProperty(long id, Property propertyDetails) {
         Property property = propertyRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Property not found with id: " + id));
@@ -45,6 +49,7 @@ public class PropertyService {
         return propertyRepository.save(property);
     }
 
+    // Delete a property from the database by its ID
     public void deletePropertyById(long id) {
         Property property = propertyRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Property not found with id: " + id));
