@@ -12,23 +12,19 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user_info")
-public class UserModel {
-
+@Table(name = "admin_info")
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private long userId;
+    private long id;
 
-    @Column(name = "email")
+    @Column(name = "Admin_name")
+    private String name;
+
+    @Column(name = "Email")
     private String email;
 
     @Column(name = "password")
     private String password;
 
-    @Column(name = "username")
-    private String username;
-
-    @Column(name = "mobileNumber")
-    private String mobileNumber;
 }

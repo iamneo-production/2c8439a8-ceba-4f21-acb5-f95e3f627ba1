@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "agent_list")
+@Table(name = "agent_info")
 public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +30,7 @@ public class Agent {
 
     @Column(name = "Profile_Image")
     private String profileImageUrl;
+
+    @Column(name = "password")
+    private String password;
 }

@@ -26,15 +26,13 @@ public class PropertyService {
 
     // Get a property by its ID from the database
     public Property getPropertyById(long id) {
-        return propertyRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Property not found with id: " + id));
+        return propertyRepository.findById(id);
+
     }
 
     // Update an existing property with the provided property details
     public Property updateProperty(long id, Property propertyDetails) {
-        Property property = propertyRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Property not found with id: " + id));
-
+        Property property = propertyRepository.findById(id);
         property.setTitle(propertyDetails.getTitle());
         property.setDescription(propertyDetails.getDescription());
         property.setAddress(propertyDetails.getAddress());
@@ -51,8 +49,7 @@ public class PropertyService {
 
     // Delete a property from the database by its ID
     public void deletePropertyById(long id) {
-        Property property = propertyRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Property not found with id: " + id));
+        Property property = propertyRepository.findById(id);
         propertyRepository.delete(property);
     }
 }

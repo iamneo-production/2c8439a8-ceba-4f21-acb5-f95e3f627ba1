@@ -2,8 +2,10 @@ package com.example.springapp.service;
 
 import com.example.springapp.model.Agent;
 import com.example.springapp.exception.ResourceNotFoundException;
+import com.example.springapp.model.LoginModel;
 import com.example.springapp.repository.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -13,6 +15,8 @@ public class AgentService {
     @Autowired
     private AgentRepository agentRepository;
 
+    private BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+
     // Get all agents from the database
     public List<Agent> getAllAgents() {
         return agentRepository.findAll();
@@ -20,6 +24,8 @@ public class AgentService {
 
     // Create a new agent and save it in the database
     public Agent createAgent(Agent agent) {
+        String encryptedPwd = bcrypt.encode(agent.getPassword());
+        agent.setPassword(encryptedPwd);
         return agentRepository.save(agent);
     }
 
@@ -46,4 +52,21 @@ public class AgentService {
                 .orElseThrow(() -> new ResourceNotFoundException("Agent not found with id: " + id));
         agentRepository.delete(agent);
     }
+
+    public Agent getbyEmailid(String email) {
+        return agentRepository.findByEmail(email);
+    }
+
+    public Agent saveAgent(Agent agent) {
+        String encryptedPwd = bcrypt.encode(agent.getPassword());
+        agent.setPassword(encryptedPwd);
+        return agentRepository.save(agent);
+    }
+
+    public Boolean isAgentPresent(LoginModel loginModel) {
+        Agent agent = agentRepository.findByEmail(loginModel.getEmail());
+
+        return agent != null && bcrypt.matches(loginModel.getPassword(), agent.getPassword());
+    }
 }
+

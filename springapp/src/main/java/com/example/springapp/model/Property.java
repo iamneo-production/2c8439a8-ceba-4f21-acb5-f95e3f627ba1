@@ -16,7 +16,7 @@ public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long Id;
 
     @Column(name = "Title")
     private String title;
