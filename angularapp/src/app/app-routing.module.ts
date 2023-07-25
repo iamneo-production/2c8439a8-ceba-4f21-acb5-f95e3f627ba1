@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { EditpropertyComponent } from './AdminModule/editproperty/editproperty.component';
-import { EditusersComponent } from './AdminModule/editusers/editusers.component';
-import { InquiriesComponent } from './AdminModule/inquiries/inquiries.component';
-import { AdminloginComponent } from './AdminModule/adminlogin/adminlogin.component';
-import { AddpropertyComponent } from './AdminModule/addproperty/addproperty.component';
+import { EditpropertyComponent } from './adminmodule/editproperty/editproperty.component';
+import { EditusersComponent } from './adminmodule/editusers/editusers.component';
+import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component';
+import { AdminloginComponent } from './adminmodule/adminlogin/adminlogin.component';
+import { AddpropertyComponent } from './adminmodule/addproperty/addproperty.component';
 import { AuthGuard } from './guards/auth.guard';
-import { AdminhomeComponent } from './AdminModule/adminhome/adminhome.component';
+import { AdminhomeComponent } from './adminmodule/adminhome/adminhome.component';
 import { UserhomeComponent } from './UserModule/userhome/userhome.component';
 import { ContactusComponent } from './UserModule/contactus/contactus.component';
 import { PropertylistingsComponent } from './UserModule/propertylistings/propertylistings.component';
@@ -26,8 +26,8 @@ import { LoadingpageComponent } from './UserModule/loadingpage/loadingpage.compo
 import { UsersignupComponent } from './UserModule/usersignup/usersignup.component';
 import { UserloginComponent } from './UserModule/userlogin/userlogin.component';
 import { AgentloginComponent } from './AgentModule/agentlogin/agentlogin.component';
-import { AdminaccComponent } from './AdminModule/adminacc/adminacc.component';
-import { AdminsignupComponent } from './AdminModule/adminsignup/adminsignup.component';
+import { AdminaccComponent } from './adminmodule/adminacc/adminacc.component';
+import { AdminsignupComponent } from './adminmodule/adminsignup/adminsignup.component';
 
 const routes: Routes = [
   { path:'', component: CommonhomeComponent},
