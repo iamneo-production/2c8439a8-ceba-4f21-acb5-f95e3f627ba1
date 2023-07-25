@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {PropertydataService} from '../propertyy/service/propertydata.service'
-import { Property } from '../propertyy/model/property';
+import {PropertydataService} from '../../service/propertydata.service'
+import { Property } from '../../model/property';
 @Component({
   selector: 'app-editproperty',
   templateUrl: './editproperty.component.html',
@@ -22,11 +22,18 @@ export class EditpropertyComponent {
     imageUrls: '',
     videoUrls: '',
     features: '',
-    agent: ''
+    maplocation:'',
+    floor:'',
+    amenities:'',
+    agents: '',
+    agentid:''
   };
+  deleteid= 0;
+
 
   ngOnInit(): void{
    this.getAllProperties();
+
   }
   constructor(private propertydataService: PropertydataService) {
   }
@@ -36,8 +43,14 @@ export class EditpropertyComponent {
     })
   }
 
+  getAllProperty(id:any){
+    this.propertydataService.getProperty(id).subscribe(data=>{
+      this.property=data;
+    })
+  }
+  
   ondelete(id:any){
-    this.propertydataService.deleteProperty(id).subscribe(data=>{
+    this.propertydataService.deleteProperty(this.deleteid).subscribe(data=>{
       this.propertylist=data;
     })
   }
@@ -54,4 +67,8 @@ export class EditpropertyComponent {
       window.location.reload();
     })
   }
+
+  ondeleteclick(id:any){
+    this.deleteid=id;
+   }
 }

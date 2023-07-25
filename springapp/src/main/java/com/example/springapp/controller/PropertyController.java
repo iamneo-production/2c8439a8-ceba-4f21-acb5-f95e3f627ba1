@@ -48,4 +48,9 @@ public class PropertyController {
         propertyService.deletePropertyById(id);
         return propertyService.getAllProperty();
     }
+
+    @GetMapping("/getbyAgentid/{agentId}")
+    public List<Property> getpropertybyAgentid(@PathVariable("agentId") long agentId){
+        return propertyService.getpropertyAgentid(agentId);
+    }
 }

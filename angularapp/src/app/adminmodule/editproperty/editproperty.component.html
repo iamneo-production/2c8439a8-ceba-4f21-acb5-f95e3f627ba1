@@ -1,3 +1,4 @@
+<app-adminnavbar></app-adminnavbar>
 
 <div class="container2">
     <div class="row row-cols-1 row-cols-md-2 g-4 pb-4 card-con">
@@ -5,15 +6,38 @@
             <div class="card bg">
                 <div class="row flex-column flex-xl-row">
                     <div class="col">
-                       <img class="img-fluid rounded-start h-100 " [src]="item.imageUrls"alt="Property img">
+                       <img class="img-fluid h-100 " src={{item.imageUrls}} alt="Property img">
+                       
+                           <!-- <div id="carouselExample" class="carousel slide">
+                               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                   <span class="visually-hidden">Previous</span>
+                               </button>
+                               <div class="carousel-inner">
+                                 <div class="carousel-item active ">
+                                   <img src="/assets/1.jpg" class="img-fluid rounded-start h-200" alt="...">
+                                 </div>
+                                 <div class="carousel-item">
+                                   <img src="/assets/2.jpg" class="img-fluid rounded-start h-200" alt="...">
+                                 </div>
+                                 <div class="carousel-item">
+                                   <img src="/assets/3.jpg" class="img-fluid rounded-start h-200" alt="...">
+                                 </div>
+                               </div>
+                               <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                 <span class="visually-hidden">Next</span>
+                               </button>
+                           </div> -->
                     </div>
                     <div class="col">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
-                                <p class="card-title fs-3 fw-bold mb-1">₹ {{item.price}}</p>
+                                <p class="card-title fs-3 fw-bold">₹ {{item.price}}</p> <img *ngIf="item.status==='For Sale'" src="../../assets/Sale.png" style="height: 60px; width: 60px;"><img *ngIf="item.status==='Sold'" src="../../assets/sold.png" style="height: 60px; width: 60px;"><img *ngIf="item.status==='For Rent'" src="../../assets/rent.png" style="height: 60px; width: 60px;">
                             </div>
-                            <span class="badge text-bg-primary mb-1 me-1 rounded-pill">{{item.type}}</span><span class="badge text-bg-primary mb-1 rounded-pill">{{item.status}}</span>
-                            <p class="card-title fs-5 fw-bold">{{item.title}}</p>
+                            <span class="badge text-bg-primary mb-2 me-1 rounded-pill">{{item.type}}</span>
+                            <!-- <span class="badge text-bg-primary mb-1 rounded-pill">{{item.status}}</span> -->
+                            <!-- <p class="card-title fs-5 fw-bold">{{item.title}}</p> -->
                             <p class="card-title fw-bold">Id number : 
                                 <small class="text-muted">{{item.id}}</small>
                             </p>
@@ -23,10 +47,12 @@
                             <p class="card-title fw-bold">Features : 
                                 <small class="text-muted">{{item.features}}</small>
                             </p>
+                            <p class="card-title fw-bold">Agent : 
+                                <small class="text-muted">{{item.agents}}</small>
+                            </p>
                             <div class="row  g-1">
-                                <button class="btn btn-primary col-7" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onedit(item.id)">Edit</button>
-                                <div class="col-1"></div>
-                                <button class="btn btn-danger col-4"  data-bs-toggle="modal" data-bs-target="#deleteModel" type="button">Delete</button>
+                                <button class="btn btn-primary col-7 me-2" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onedit(item.id)">Edit</button>
+                                <button class="btn btn-danger col-4"  data-bs-toggle="modal" data-bs-target="#deleteModel" type="button" (click)="ondeleteclick(item.id)">Delete</button>
                                 <div class="modal fade" id="deleteModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                       <div class="modal-content">
@@ -52,7 +78,7 @@
         </div>
     </div>
 </div>
-<!-- 
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -67,6 +93,10 @@
                     <input type="text" class="form-control" [(ngModel)]="property.title" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="col-md-6">
+                    <label class="form-label">Price</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.price" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-4">
                     <label class="form-label">Type</label>
                     <select id="inputType" class="form-select" [(ngModel)]="property.type" [ngModelOptions]="{standalone: true}">
                         <option selected>Choose...</option>
@@ -75,9 +105,27 @@
                         <option value="Condo">Condo</option>
                     </select>
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label">Price</label>
-                    <input type="text" class="form-control" [(ngModel)]="property.price" [ngModelOptions]="{standalone: true}">
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Location</label>
+                    <select id="inputState" class="form-select" [(ngModel)]="property.location" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Tirupur">Tirupur</option>
+                        <option value="Mysore">Mysore</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Jammu">Jammu</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hydrabad">Hydrabad</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Status</label>
+                    <select id="inputState" class="form-select" [(ngModel)]="property.status" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="For Sale">Sale</option>
+                        <option value="Sold">Sold</option>
+                        <option value="For Rent">Rent</option>
+                    </select>
                 </div>
                 <div class="col-md-6">
                     <label for="inputAddress" class="form-label">Address</label>
@@ -85,25 +133,8 @@
                 </div>
             
                 <div class="col-md-6">
-                    <label for="inputState" class="form-label">Location</label>
-                    <select id="inputState" class="form-select" [(ngModel)]="property.location" [ngModelOptions]="{standalone: true}">
-                        <option selected>Choose...</option>
-                        <option value="Chennai">Chennai</option>
-                        <option value="Tirupur">Tirupur</option>
-                        <option value="Mysore">Mysore</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
                     <label for="inputCity" class="form-label">Features</label>
                     <input type="text" class="form-control" [(ngModel)]="property.features" [ngModelOptions]="{standalone: true}">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputState" class="form-label">Status</label>
-                    <select id="inputState" class="form-select" [(ngModel)]="property.status" [ngModelOptions]="{standalone: true}">
-                        <option selected>Choose...</option>
-                        <option value="On Sale">On Sale</option>
-                        <option value="Sold">Sold</option>
-                    </select>
                 </div>
                 <div class="col-md-6">
                     <label for="inputCity" class="form-label">Image Url</label>
@@ -115,7 +146,19 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputZip" class="form-label">Agent</label>
-                    <input type="text" class="form-control" [(ngModel)]="property.agent" [ngModelOptions]="{standalone: true}">
+                    <input type="text" class="form-control" [(ngModel)]="property.agents" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Map Location</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.maplocation" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Floor Plans</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.floor" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Amenities</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.amenities" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="col-md-12">
                     <label for="inputZip" class="form-label">Description</label>
@@ -131,4 +174,4 @@
     </div>
   </div>
 
- -->
+

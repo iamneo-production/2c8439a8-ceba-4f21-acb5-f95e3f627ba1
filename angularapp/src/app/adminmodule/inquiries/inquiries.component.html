@@ -1,145 +1,66 @@
 
-<app-adminnavbar></app-adminnavbar>
-<div class="table-responsive container2">
-  <div class="option">
-    <h2 class="list">Inquiries from customers...</h2>
-  </div>
-  <br>
-<table class="table">
-  <thead>
-    <tr class="a">
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Regarding</th>
-      <th scope="col">Date</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-<tbody style="font-style: 'Abel', sans-serif;">
-    <tr class="b">
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>mark@gmail.com</td>
-      <td>Buying</td>
-      <td>12/12/2023</td>
-      <td> <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>jacob@gmail.com</td>
-      <td>Selling</td>
-      <td>12/12/2023</td>
-      <td> <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">3</th>
-      <td>Sam</td>
-      <td>sam@gmail.com</td>
-      <td>Agent</td>
-      <td>12/12/2023</td>
-      <td> <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">4</th>
-      <td>Sam</td>
-      <td>sam@gmail.com</td>
-      <td>Agent</td>
-      <td>12/12/2023</td>
-      <td> <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">5</th>
-      <td>Sam</td>
-      <td>sam@gmail.com</td>
-      <td>Agent</td>
-      <td>12/12/2023</td>
-      <td> <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">6</th>
-      <td>Sam</td>
-      <td>sam@gmail.com</td>
-      <td>Agent</td>
-      <td>12/12/2023</td>
-      <td> <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">7</th>
-      <td>Sam</td>
-      <td>sam@gmail.com</td>
-      <td>Agent</td>
-      <td>12/12/2023</td>
-      <td> <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr class="b">
-      <th scope="row">8</th>
-      <td>Sam</td>
-      <td>sam@gmail.com</td>
-      <td>Agent</td>
-      <td>12/12/2023</td>
-      <td > <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
-    <tr  class="b">
-      <th scope="row">9</th>
-      <td>Sam</td>
-      <td>sam@gmail.com</td>
-      <td>Agent</td>
-      <td>12/12/2023</td>
-      <td > <button type="button" class="ans-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Answer
-</button></td>
-    </tr>
+    <app-adminnavbar></app-adminnavbar>
+    <div class="table-responsive container2">
+        <h2 class="list">Inquiries from customers...</h2>
+      <br>
+    <table class="table">
+      <thead>
+        <tr class="a">
+          <th scope="col">Sl no.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Regarding</th>
+          <th scope="col">Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+    <tbody>
+        <tr class="b"  *ngFor="let item of inquirylist">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.question}}</td>
+          <td>{{item.date}}</td>
+          <td> 
+            <button *ngIf="item.answer===''" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal" (click)="onedit(item.id)">Answer</button>
+            <button *ngIf="item.answer!=''" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal" (click)="onedit(item.id)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
 
-  </tbody>
-</table>
-</div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="margin-top: 10%;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Answer Here !</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-        <div class="logs">
-        <label for="username">Customer Name:</label><div>Mark</div><br>
-        <label for="phoneNumber">Phone Number:</label><div>9876543210</div><br>
-        <label for="phoneNumber">Customer Question:</label><div>Buying option is not working</div><br>
-        <label for="phoneNumber">Answer:</label><div><textarea style="width: 100%;"></textarea></div>
-        </div></form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-3" id="exampleModalLabel">Answer Here !</h1>
+          </div>
+          <div class="modal-body">
+                  <div class="card p-0">
+                    <div class="card-header">
+                      <h5>{{inquiry.question}}</h5>
+                    </div>
+                    <div class="card-body ">
+                      <p class="text-muted">Raised by : {{inquiry.name}}</p>
+                      <p class="text-muted">Raised at : {{inquiry.date}}</p>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="answer">
+                      <label for="inputAddress" class="form-label">Answer : </label>
+                      <textarea type="text" class="form-control" [(ngModel)]="inquiry.answer" [ngModelOptions]="{standalone: true}"></textarea>
+                  </div>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="onDelete(inquiry.id)">Delete</button>
+           <div class="close"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div>
+            <button type="button" class="btn btn-primary" (click)="onSubmit()"  data-bs-dismiss="modal">Submit</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
+
+

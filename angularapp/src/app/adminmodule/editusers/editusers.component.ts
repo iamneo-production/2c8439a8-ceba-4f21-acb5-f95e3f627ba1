@@ -1,82 +1,72 @@
 import { Component } from '@angular/core';
-
+import { User } from '../../model/user';
+import {UserdataService} from '../../service/userdata.service'
+import { AgentdataService } from '../../service/agentdata.service';
+import { Agent } from '../../model/agent';
 @Component({
   selector: 'app-editusers',
   templateUrl: './editusers.component.html',
   styleUrls: ['./editusers.component.css']
 })
 export class EditusersComponent {
-  searchText = '';
-users = [
+
+  userslist: User[] = [];
+  agentslist: Agent[] = [];
+
+
+  user: User= {
+    userId: '',
+    username: '',
+    email: '',
+    mobileNumber: '',
+    password:''
+  }; 
   
-    {
-      Name: 'Mark',
-      email: 'mark@gmail.com',
-      phone: '9876543210',
-      acc: '23/06/2023',
-    },
+  agent: Agent= {
+    id: '',
+    name: '',
+    email: '',
+    phone: '',
+    profileImageUrl: '',
+    password: ''
+  };
 
-    {
-      Name: 'Sam',
-      email: 'sam@gmail.com',
-      phone: '9321654870',
-      acc: '23/06/2023',
-    },
-        
-    {
-      Name: 'Antony',
-      email: 'antony@gmail.com',
-      phone: '8765422210',
-      acc: '23/06/2023',
-    },
+  deleteid = 0;
 
-    {
-      Name: 'Andrew',
-      email: 'andrew@gmail.com',
-      phone: '7564422210',
-      acc: '23/06/2023',
-    },
-
-    
-  ];
-
-  ondelete(deleteme: any) {
-     this.users.splice(deleteme,1) 
+  ngOnInit(): void{
+   this.getAllUsers();
+   this.getAllAgents();
   }
 
-  agents = [
+  constructor(private userdataService: UserdataService, private agentdataService: AgentdataService) {}
+
+  getAllUsers(){
+    this.userdataService.getUsers().subscribe(data=>{
+      this.userslist= data;
+    })
+  }
+
+  getAllAgents(){
+    this.agentdataService.getAgents().subscribe(data=>{
+      this.agentslist= data;
+    })
+  }
   
-    {
-      Name: 'Mark',
-      email: 'mark@gmail.com',
-      phone: '9876543210',
-      exp: '8',
-    },
-
-    {
-      Name: 'Sam',
-      email: 'sam@gmail.com',
-      phone: '9321654870',
-      exp: '8',
-    },
-        
-    {
-      Name: 'Antony',
-      email: 'antony@gmail.com',
-      phone: '8765422210',
-      exp: '7',
-    },
-
-    {
-      Name: 'Andrew',
-      email: 'andrew@gmail.com',
-      phone: '7564422210',
-      exp: '7',
-    },
-
-    
-  ];
-    ondel(deleteme: any) {
-     this.agents.splice(deleteme,1) 
+  ondeleteuser(){
+    this.userdataService.deleteUser(this.deleteid).subscribe(data=>{
+      window.location.reload();
+      this.userslist=data;
+    })
+  }
+  
+  ondeleteagent(){
+    this.agentdataService.deleteAgent(this.deleteid).subscribe(data=>{
+      this.agentslist=data;
+      window.location.reload();
+    })
+  }
+  
+  ondeleteclick(id:any){
+   this.deleteid=id;
   }
 }

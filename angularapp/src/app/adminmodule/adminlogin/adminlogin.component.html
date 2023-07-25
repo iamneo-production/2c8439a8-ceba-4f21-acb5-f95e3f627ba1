@@ -1,22 +1,23 @@
-	
-    <div class="wrapper">
-        <div class="inner">
-            <img src="assets/image-1.png" alt="" class="image-1">
-            <form action="">
-                <ngx-typed-js [strings]="['Welcome back 𝘈𝘥𝘮𝘪𝘯...']" [showCursor]="false"><h1 class="typing stg"></h1></ngx-typed-js>
-                <div class="form-holder">
-                    <span class="lnr lnr-envelope"></span>
-                    <input type="text" class="form-control" placeholder="Mail">
-                </div>
-                <div class="form-holder">
-                    <span class="lnr lnr-lock"></span>
-                    <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <button routerLink="/propertylist">
-                    <span routerLink="/propertylist">Login</span>
-                </button>
-            </form>
-            <img src="assets/image-2.png" alt="" class="image-2">
-        </div>
+<form>
+    <ngx-typed-js [strings]="['Welcome back Admin...']" [showCursor]="false"><h1 class="typing stg"></h1></ngx-typed-js>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Email address</label>
+      <input type="email" id="form2Example1" class="form-control" #email />
     </div>
 
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Password</label>
+      <input [type]="pass" id="form2Example2" class="form-control" #password />
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-start">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form2Example31" (click)="onClick()"/>
+          <label class="form-check-label" for="form2Example31"> Show Password </label>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary col-md-12"  (click)="onAdminlogin(email.value,password.value)">Sign in</button>
+  </form>

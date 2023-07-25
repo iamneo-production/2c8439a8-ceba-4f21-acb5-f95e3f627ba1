@@ -1,0 +1,30 @@
+.btn-primary{
+    background-color: #3b4cb8;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn-primary:hover{
+    background-color: whitesmoke;
+    color: #3b4cb8;
+
+}
+.btn-danger,.btn-secondary{
+    border-radius: 10px;
+}
+.bg{
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+
+.card-con{
+    justify-content: center;
+}
+
+.bg:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.img-fluid{
+    border-radius: 15px;
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PropertydataService } from '../propertyy/service/propertydata.service';
-import { Property } from '../propertyy/model/property';
+import { PropertydataService } from '../../service/propertydata.service';
+import { Property } from '../../model/property';
 
 @Component({
   selector: 'app-addproperty',
@@ -21,7 +21,11 @@ export class AddpropertyComponent {
     imageUrls: '',
     videoUrls: '',
     features: '',
-    agent: ''
+    maplocation:'',
+    floor:'',
+    amenities:'',
+    agents: '',
+    agentid:''
   };
   constructor(private propertydataService: PropertydataService) {
   }
@@ -34,7 +38,7 @@ export class AddpropertyComponent {
   isValid():boolean{
     if(this.property.title != '' && this.property.description != '' && this.property.address != '' 
     && this.property.price != '' && this.property.type != '' && this.property.location != '' && this.property.status != '' 
-    && this.property.imageUrls != ''&& this.property.videoUrls != '' && this.property.agent != '' && this.property.features != ''){
+    && this.property.imageUrls != ''&& this.property.videoUrls != '' && this.property.agents != '' && this.property.features != ''){
       return false;
     } 
     return true;
