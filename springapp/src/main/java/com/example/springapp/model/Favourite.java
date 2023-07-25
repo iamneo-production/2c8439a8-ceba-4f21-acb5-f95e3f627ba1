@@ -21,6 +21,12 @@ public class Favourite {
     @Column(name = "Img")
     private String img;
 
+    @Column(name = "UserId")
+    private String userid;
+
+    @Column(name = "PropertyId")
+    private String propertyid;
+
     @Column(name = "Type")
     private String type;
 
@@ -29,4 +35,7 @@ public class Favourite {
 
     @Column(name = "Name")
     private String name;
+
+    @Column(name = "Status")
+    private String status;
 }

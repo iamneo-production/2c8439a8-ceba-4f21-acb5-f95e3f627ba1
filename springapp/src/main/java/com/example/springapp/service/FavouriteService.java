@@ -35,6 +35,7 @@ public class FavouriteService {
         if (optionalFavourite.isPresent()) {
             Favourite existingFavourite = optionalFavourite.get();
             existingFavourite.setImg(favouriteDetails.getImg());
+            existingFavourite.setPropertyid(favouriteDetails.getPropertyid());
             existingFavourite.setType(favouriteDetails.getType());
             existingFavourite.setPrice(favouriteDetails.getPrice());
             existingFavourite.setName(favouriteDetails.getName());
