@@ -9,38 +9,46 @@ import { Property } from '../model/property';
 export class PropertydataService {
   getPropertyById: any;
 
+   //Vasanth
+   private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties";  
+   private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/";  
+   private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/";  
+   private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/"; 
+   private postUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/";
+ 
+  // //Suganya
+  //  private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties";  
+  //  private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/";  
+  //  private deleteUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/";  
+  //  private updateUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/";  
+  //  private postUrl = "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties";
+
   constructor(private httpClient: HttpClient){}
   
 
   getProperties(): Observable<Property[]>{
-    let propertyUrl = 'http://localhost:8080/properties';
-    return this.httpClient.get<Property[]>(propertyUrl);
+    return this.httpClient.get<Property[]>(`${this.getUrl}`);
   }
   getPropertybyAgentid(): Observable<Property[]>{
     let agentId = localStorage.getItem('id');
-    let propertyUrl = 'http://localhost:8080/properties/getbyAgentid/'+agentId;
-    return this.httpClient.get<Property[]>(propertyUrl);
+    return this.httpClient.get<Property[]>(`${this.getbyidUrl}/${agentId}`);
   }
   
   getProperty(propertyId: any): Observable<Property>{
     console.log(propertyId);
-    let propertyUrl = 'http://localhost:8080/properties/'+propertyId;
-    return this.httpClient.get<Property>(propertyUrl);
+    return this.httpClient.get<Property>(`${this.getbyidUrl}/${propertyId}`);
   }
 
   updateProperty(propertyId: any,propertyBody: any): Observable<Property[]>{
-    const propertyUrl = 'http://localhost:8080/properties/'+propertyId;
-    return this.httpClient.put<Property[]>(propertyUrl, propertyBody);
+    return this.httpClient.put<Property[]>(`${this.updateUrl}/${propertyId}`, propertyBody);
   }
   
   postProperty(propertyBody: any): Observable<Property>{
-    const propertyUrl = 'http://localhost:8080/properties';
-    return this.httpClient.post<Property>(propertyUrl, propertyBody);
+    return this.httpClient.post<Property>(`${this.postUrl}`, propertyBody);
   }
 
   deleteProperty(propertyId: any): Observable<Property[]>{
-    let propertyUrl = 'http://localhost:8080/properties/'+propertyId;
-    return this.httpClient.delete<Property[]>(propertyUrl);
+    return this.httpClient.delete<Property[]>(`${this.deleteUrl}/${propertyId}`);
   }
 }
 
