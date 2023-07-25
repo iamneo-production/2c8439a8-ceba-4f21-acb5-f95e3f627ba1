@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/properties")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
 public class PropertyController {
 
     @Autowired
@@ -47,5 +47,10 @@ public class PropertyController {
     public List<Property> deletePropertyById(@PathVariable long id) {
         propertyService.deletePropertyById(id);
         return propertyService.getAllProperty();
+    }
+
+    @GetMapping("/getbyAgentid/{agentId}")
+    public List<Property> getpropertybyAgentid(@PathVariable("agentId") long agentId){
+        return propertyService.getpropertyAgentid(agentId);
     }
 }

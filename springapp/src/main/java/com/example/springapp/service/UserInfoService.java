@@ -22,9 +22,12 @@ public class UserInfoService {
         return userRepo.save(user);
     }
 
-    public Boolean isUserPresent(LoginModel loginModel) {
+    public UserModel isUserPresent(LoginModel loginModel) {
         UserModel user = userRepo.findByEmail(loginModel.getEmail());
-        return user != null && bcrypt.matches(loginModel.getPassword(), user.getPassword());
+       if(user != null && bcrypt.matches(loginModel.getPassword(), user.getPassword())){
+           return user;
+        }
+       return null;
     }
 
     public List<UserModel> getAllusers() {

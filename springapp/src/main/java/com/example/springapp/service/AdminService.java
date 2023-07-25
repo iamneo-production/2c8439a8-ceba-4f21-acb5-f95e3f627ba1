@@ -57,9 +57,13 @@ public class AdminService {
         return adminRepository.save(admin);
     }
 
-    public Boolean isAdminPresent(LoginModel loginModel) {
+    public Admin isAdminPresent(LoginModel loginModel) {
         Admin admin = adminRepository.findByEmail(loginModel.getEmail());
-        return admin != null && bcrypt.matches(loginModel.getPassword(), admin.getPassword());
+
+        if(admin != null && bcrypt.matches(loginModel.getPassword(), admin.getPassword())){
+            return admin;
+        }
+        return null;
     }
 }
 
