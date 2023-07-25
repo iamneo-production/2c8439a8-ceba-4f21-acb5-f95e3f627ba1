@@ -1,0 +1,29 @@
+.footer{
+    position: sticky;
+    margin-top: 15%;
+    overflow: hidden;
+    background-color: rgb(172, 172, 172);
+    padding: 10px 10px;
+    height: 90px;
+}
+
+h1,p{
+    color: aliceblue;
+    font-weight: bold;
+    margin-bottom:-5px;
+}
+
+
+a{
+    color: aliceblue;
+    padding: 0px 8px;
+    font-size: 25px;
+}
+
+a:hover{
+    color: var(--praimary-color);
+}
+
+i{
+    padding: 0px 8px;
+}
