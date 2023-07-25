@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admins") // Update the URL mapping to "/admins"
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
 public class AdminController {
     @Autowired
     private AdminService adminService; // Change the service to AdminService

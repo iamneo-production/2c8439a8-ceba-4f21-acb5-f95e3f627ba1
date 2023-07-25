@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/favourites")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
 public class FavouriteController {
     @Autowired
     private FavouriteService favouriteService;

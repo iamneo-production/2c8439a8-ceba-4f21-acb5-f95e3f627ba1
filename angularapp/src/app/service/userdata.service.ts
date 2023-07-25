@@ -8,40 +8,43 @@ import { User } from '../model/user';
 })
 export class UserdataService {
 
+  //Vasanth
+  private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users";  
+  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
+  private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
+  private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
+  private postUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
+  private loginUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/login";  
+  private signupUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/signup";  
+
   constructor(private httpClient: HttpClient){}
   
 
   getUsers(): Observable<User[]>{
-    let userUrl = 'http://localhost:8080/users';
-    return this.httpClient.get<User[]>(userUrl);
+    return this.httpClient.get<User[]>(`${this.getUrl}`);
   }
   
   getUser(userId: any): Observable<User>{
-    let userUrl = 'http://localhost:8080/users/'+userId;
-    return this.httpClient.get<User>(userUrl);
+    return this.httpClient.get<User>(`${this.getbyidUrl}/${userId}`);
   }
 
   deleteUser(userId: any): Observable<User[]>{
-    let userUrl = 'http://localhost:8080/users/'+userId;
-    return this.httpClient.delete<User[]>(userUrl);
+    return this.httpClient.delete<User[]>(`${this.deleteUrl}/${userId}`);
   }
   
-  updateUser(UserId: any,userBody: any): Observable<User[]>{
-    const userUrl = 'http://localhost:8080/users/'+UserId;
-    return this.httpClient.put<User[]>(userUrl, userBody);
+  updateUser(userId: any,userBody: any): Observable<User[]>{
+    return this.httpClient.put<User[]>(`${this.updateUrl}/${userId}`, userBody);
   }
   
   postUser(userBody: any): Observable<User>{
-    const userUrl = 'http://localhost:8080/users';
-    return this.httpClient.post<User>(userUrl, userBody);
+    return this.httpClient.post<User>(`${this.postUrl}`, userBody);
   }
 
   loginUser(user:any): Observable<any>{
-      const userUrl = 'http://localhost:8080/user/login';
-      return this.httpClient.post(userUrl,user);
+      return this.httpClient.post(`${this.loginUrl}`,user);
   }
   signupUser(user:any): Observable<any>{
-      const userUrl = 'http://localhost:8080/user/signup';
-      return this.httpClient.post(userUrl,user);
+      return this.httpClient.post(`${this.signupUrl}`,user);
   }
 }
+
