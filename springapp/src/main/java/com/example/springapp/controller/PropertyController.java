@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/properties")
-@CrossOrigin(origins = "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
+@CrossOrigin(origins = "https://8081-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
 public class PropertyController {
 
     @Autowired
