@@ -21,15 +21,15 @@
                     <br>
                     <div class="col-md-12">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" [(ngModel)]="adminname" [ngModelOptions]="{standalone: true}">
+                        <input type="text" class="form-control" [(ngModel)]="admin.name" [ngModelOptions]="{standalone: true}">
                       </div>
                       <div class="col-md-12">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" [(ngModel)]="adminemail" [ngModelOptions]="{standalone: true}">
+                        <input type="email" class="form-control" [(ngModel)]="admin.email" [ngModelOptions]="{standalone: true}">
                       </div>
                 
                       <div>
-                      <button class="btn btn-primary col-12 mt-3">Submit</button>
+                      <button class="btn btn-primary col-12 mt-3"  (click)="onSubmit()">Submit</button>
                       </div>
                     </form>
               </div>
@@ -38,7 +38,7 @@
                     <h4 class="m-0">This action will delete your account permanently!</h4>
                     <div class="col-md-12">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control"  [(ngModel)]="adminemail" [ngModelOptions]="{standalone: true}">
+                        <input type="email" class="form-control"  [(ngModel)]="admin.email" [ngModelOptions]="{standalone: true}">
                       </div>
                       <div class="col-12">
                         <label class="form-label">Password</label>

@@ -26,7 +26,7 @@ onUsersignup(email:string,mobileNumber:string,username:string,password:string){
   let user = {username,mobileNumber,email,password};
   this.userservicedata.signupUser(user).subscribe(data=>{
    console.log(data)
-   this.router.navigate(['/userhome']);
+   this.router.navigate(['/userlogin']);
    localStorage.setItem('userId',data.userId);
    localStorage.setItem('email',data.email);
    localStorage.setItem('mobileNumber',data.mobileNumber);

@@ -32,34 +32,35 @@ ngOnInit():void{
   this.property = data;
   console.log(data)
  })
+ this.getFavourites()
 }
 
-addToFavorites() {
-  const favouriteBody: Favourite = {
-    id: this.property.id,
-    propertyid: this.property.id,
-    img: this.property.imageUrls,
-    type: this.property.type,
-    price: this.property.price,
-    name: this.property.title,
-    status: this.property.status
-  };
-  
-   // Check if the property is already added to favourites
-   const isAlreadyAdded = this.favourites.some((property) => property.id === favouriteBody.propertyid);
-   if (isAlreadyAdded) {
-     return; // Exit the method if the property is already added
-   }
- 
-   this.favdataService.postFavourite(favouriteBody).subscribe((favourite) => {
-     this.favourites.push(favourite);
-     this.property.isAddedToFavourites = true; // Set the flag to indicate property added to favourites
-   });
-}
-
-getAllPropertybyAgentid(agentid:any){
-  this.propertydataservice.getPropertybyAgentid().subscribe(data=>{
-    this.propertylist= data;
+addToFavorites(id:string){
+  let userid = localStorage.getItem('userId')!;
+  let favourite : Favourite = {
+    id: 0,
+    propertyid: id,
+    userid: userid
+  } 
+  this.favdataService.createFavourite(favourite).subscribe(data=>{
+    this.getFavourites();
   })
+}
+
+getFavourites(){
+  let userid = Number(localStorage.getItem('userId'));
+  this.favdataService.getByUserId(userid).subscribe(data=>{
+    this.favourites = data;
+  })
+}
+
+isFavourite():boolean{
+  for (let index = 0; index < this.favourites.length; index++) {
+    const element = this.favourites[index];
+    if(element.propertyid===this.property.id){
+      return true;
+    }
+  }
+  return false;
 }
 }

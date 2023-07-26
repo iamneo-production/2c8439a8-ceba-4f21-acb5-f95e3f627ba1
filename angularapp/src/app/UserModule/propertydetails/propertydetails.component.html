@@ -2,7 +2,7 @@
 <div class="container2">
   <div class="tl d-flex">
     <h3>{{property.title}} </h3>
-    <button class="btn btn-danger ms-auto fav" (click)="addToFavorites()" [disabled]="property.isAddedToFavourites">{{ property.isAddedToFavourites ? 'Added to Favourites' : 'Add to Favourites' }}</button>
+    <button class="btn btn-danger ms-auto fav" (click)="addToFavorites(property.id)" [disabled]="isFavourite()">{{ isFavourite() ? 'Added to Favourites' : 'Add to Favourites' }}</button>
     <button class="btn btn-primary ms-3" routerLink="/paymentpage" *ngIf="property.status=== 'For Sale'">Buy this property</button>
     <button class="btn btn-primary ms-3" routerLink="/paymentpage" *ngIf="property.status=== 'For Rent'">Rent this property</button>
     <button class="btn btn-primary ms-3" routerLink="/paymentpage" *ngIf="property.status=== 'Sold'" disabled>Buy this property</button>

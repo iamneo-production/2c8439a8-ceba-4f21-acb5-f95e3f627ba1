@@ -44,4 +44,8 @@ export class UserdataService {
       const userUrl = 'http://localhost:8080/user/signup';
       return this.httpClient.post(userUrl,user);
   }
+  updatePass(id:number,oldpass:string,newpass:string):Observable<any>{
+    const userUrl = `http://localhost:8080/users/updatepass/${id}/${oldpass}/${newpass}`;
+    return this.httpClient.put(userUrl,null)
+  }
 }

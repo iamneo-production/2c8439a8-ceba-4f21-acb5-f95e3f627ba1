@@ -18,24 +18,10 @@ public class Favourite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "Img")
-    private String img;
-
     @Column(name = "UserId")
-    private String userid;
+    private long userid;
 
     @Column(name = "PropertyId")
-    private String propertyid;
+    private long propertyid;
 
-    @Column(name = "Type")
-    private String type;
-
-    @Column(name = "Price")
-    private String price;
-
-    @Column(name = "Name")
-    private String name;
-
-    @Column(name = "Status")
-    private String status;
 }
