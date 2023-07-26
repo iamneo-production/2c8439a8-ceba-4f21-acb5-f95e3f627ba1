@@ -11,9 +11,7 @@ export class AdmindataService {
 
   //Vasanth"
   private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins";  
-  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/";  
-  private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/";  
-  private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/";  
+  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/"; 
   private loginUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/login";  
   private signupUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/signup";  
 
@@ -29,7 +27,7 @@ export class AdmindataService {
   }
 
   deleteAdmin(adminId: any): Observable<Admin[]>{
-    return this.httpClient.delete<Admin[]>(`${this.deleteUrl}/${adminId}`);
+    return this.httpClient.delete<Admin[]>(`${this.getbyidUrl}/${adminId}`);
   }
 
   loginAdmin(admin:any): Observable<any>{
@@ -40,7 +38,7 @@ export class AdmindataService {
 }
 
   updateAdmin(adminId: any,adminBody: any): Observable<Admin[]>{
-    return this.httpClient.put<Admin[]>(`${this.updateUrl}/${adminId}`,adminBody);
+    return this.httpClient.put<Admin[]>(`${this.getbyidUrl}/${adminId}`,adminBody);
   }
   
 }
