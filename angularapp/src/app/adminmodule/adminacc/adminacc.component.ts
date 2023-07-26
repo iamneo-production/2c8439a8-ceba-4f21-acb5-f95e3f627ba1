@@ -8,30 +8,35 @@ import { AdmindataService } from 'src/app/service/admindata.service';
   styleUrls: ['./adminacc.component.css']
 })
 export class AdminaccComponent {
-  adminname =  localStorage.getItem('adminname');
-  adminemail =  localStorage.getItem('adminemail');
-  adminid =  localStorage.getItem('adminid');
-
 
   adminslist: Admin[] = [];
 
   admin: Admin= {
-    id: '',
-    name: '',
-    email: '',
-    password: ''
+    id: localStorage.getItem('adminid')!,
+    name: localStorage.getItem('adminname')!,
+    email:  localStorage.getItem('adminemail')!
   };
 
 
   constructor(private admindataservice:AdmindataService){}
 
+  
+  onSubmit(){
+    this.admindataservice.updateAdmin(this.admin.id,this.admin).subscribe(data=>{
+      this.adminslist=data;
+      console.log(data)
+      alert('Your data uploaded succesfully');
+      localStorage.setItem("adminid",this.admin.id+'')
+      localStorage.setItem("adminname",this.admin.name+'')
+      localStorage.setItem("adminemail",this.admin.email+'')
+    })
+  }
+
   ondeleteadmin(){
-    localStorage.removeItem("id");
-    localStorage.removeItem("name");
-    localStorage.removeItem("agentemail");
-    localStorage.removeItem("phone");
-    localStorage.removeItem("profileImageUrl");
-    this.admindataservice.deleteAdmin(this.adminid).subscribe(data=>{
+    localStorage.removeItem("adminid");
+    localStorage.removeItem("adminname");
+    localStorage.removeItem("adminemail");
+    this.admindataservice.deleteAdmin(this.admin.id).subscribe(data=>{
       this.adminslist=data;
     })
   }

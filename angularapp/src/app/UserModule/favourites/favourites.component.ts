@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Favourite } from 'src/app/model/favourite';
+import { Property } from 'src/app/model/property';
 import { FavdataService } from 'src/app/service/favdata.service';
+import { PropertydataService } from 'src/app/service/propertydata.service';
 
 @Component({
   selector: 'app-favourites',
@@ -10,24 +12,42 @@ import { FavdataService } from 'src/app/service/favdata.service';
 })
 export class FavouritesComponent {
   favourites: Favourite[] = [];
+  propertylist: Property[]= [];
 
-  constructor(private favdataService: FavdataService, private router:Router) { }
+  constructor(private favdataService: FavdataService, private router:Router, private propertydataservice:PropertydataService) { }
 
   ngOnInit() {
-    this.favdataService.getFavourites().subscribe(favourites => {
-      this.favourites = favourites;
-    });
+    this.getFavourites()
   }
 
-
-  removeFromFavourites(favourite: Favourite) {
-    this.favdataService.deleteFavourite(favourite.id).subscribe(() => {
-      this.favourites = this.favourites.filter(fav => fav.id !== favourite.id);
-    });
+  getFavourites(){
+    let userid = Number(localStorage.getItem('userId'));
+    this.favdataService.getByUserId(userid).subscribe(data=>{
+      this.favourites = data;
+      this.getProperties()
+    })
   }
 
-  isAddedToFavourites(favourite: Favourite) {
-    return favourite.isAddedToFavourites; 
+getProperties(){
+  let properties : Property[] = [];
+  for (let index = 0; index < this.favourites.length; index++) {
+    const element = this.favourites[index];
+    this.propertydataservice.getProperty(element.propertyid).subscribe(data=>{
+      properties.push(data);
+    })
+  }
+  this.propertylist = properties;
+}
+
+removeFromFavourites(id:String) {
+    for (let index = 0; index < this.favourites.length; index++) {
+      const element = this.favourites[index];
+      if(element.propertyid===id){
+        this.favdataService.deleteFavourite(element.id).subscribe(data=>{
+          this.getFavourites();
+        })
+      }
+    }
   }
   
   propertyDetails(propertyid:any){

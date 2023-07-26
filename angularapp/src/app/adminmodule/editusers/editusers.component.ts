@@ -18,8 +18,7 @@ export class EditusersComponent {
     userId: '',
     username: '',
     email: '',
-    mobileNumber: '',
-    password:''
+    mobileNumber: ''
   }; 
   
   agent: Agent= {
@@ -27,8 +26,7 @@ export class EditusersComponent {
     name: '',
     email: '',
     phone: '',
-    profileImageUrl: '',
-    password: ''
+    profileImageUrl: ''
   };
 
   deleteid = 0;
