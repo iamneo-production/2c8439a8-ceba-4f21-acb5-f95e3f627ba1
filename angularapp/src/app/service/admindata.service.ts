@@ -8,36 +8,37 @@ import { Admin } from '../model/admin';
 })
 export class AdmindataService {
 
+
+  //Vasanth"
+  private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins";  
+  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/"; 
+  private loginUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/login";  
+  private signupUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/signup";  
+
+
   constructor(private httpClient: HttpClient){}
 
-
   getAdmins(): Observable<Admin[]>{
-    let adminUrl = 'http://localhost:8080/admins';
-    return this.httpClient.get<Admin[]>(adminUrl);
+    return this.httpClient.get<Admin[]>(`${this.getUrl}`);
   }
   
   getAdmin(adminId: any): Observable<Admin>{
-    let AdminUrl = 'http://localhost:8080/admins/'+adminId;
-    return this.httpClient.get<Admin>(AdminUrl);
+    return this.httpClient.get<Admin>(`${this.getbyidUrl}/${adminId}`);
   }
 
   deleteAdmin(adminId: any): Observable<Admin[]>{
-    let adminUrl = 'http://localhost:8080/admins/'+adminId;
-    return this.httpClient.delete<Admin[]>(adminUrl);
+    return this.httpClient.delete<Admin[]>(`${this.getbyidUrl}/${adminId}`);
   }
 
   loginAdmin(admin:any): Observable<any>{
-    const adminUrl = 'http://localhost:8080/admin/login';
-    return this.httpClient.post(adminUrl,admin);
+    return this.httpClient.post(`${this.loginUrl}`,admin);
 }
   signupAdmin(admin:any): Observable<any>{
-    const adminUrl = 'http://localhost:8080/admin/signup';
-    return this.httpClient.post(adminUrl,admin);
+    return this.httpClient.post(`${this.signupUrl}`,admin);
 }
 
   updateAdmin(adminId: any,adminBody: any): Observable<Admin[]>{
-    const adminUrl = 'http://localhost:8080/admins/'+adminId;
-    return this.httpClient.put<Admin[]>(adminUrl, adminBody);
+    return this.httpClient.put<Admin[]>(`${this.getbyidUrl}/${adminId}`,adminBody);
   }
   
 }
