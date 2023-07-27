@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-
+import { User } from '../../model/user';
+import {UserdataService} from '../../service/userdata.service'
+import { AgentdataService } from '../../service/agentdata.service';
+import { Agent } from '../../model/agent';
 @Component({
   selector: 'app-editusers',
   templateUrl: './editusers.component.html',
@@ -7,40 +10,63 @@ import { Component } from '@angular/core';
 })
 export class EditusersComponent {
 
-users = [
+  userslist: User[] = [];
+  agentslist: Agent[] = [];
+
+
+  user: User= {
+    userId: '',
+    username: '',
+    email: '',
+    mobileNumber: ''
+  }; 
   
-    {
-      Name: 'Mark',
-      email: 'mark@gmail.com',
-      phone: '9876543210',
-      acc: '23/06/2023',
-    },
+  agent: Agent= {
+    id: '',
+    name: '',
+    email: '',
+    phone: '',
+    profileImageUrl: ''
+  };
 
-    {
-      Name: 'Sam',
-      email: 'sam@gmail.com',
-      phone: '9321654870',
-      acc: '23/06/2023',
-    },
-        
-    {
-      Name: 'Antony',
-      email: 'antony@gmail.com',
-      phone: '8765422210',
-      acc: '23/06/2023',
-    },
+  deleteid = 0;
 
-    {
-      Name: 'Andrew',
-      email: 'andrew@gmail.com',
-      phone: '7564422210',
-      acc: '23/06/2023',
-    },
+  ngOnInit(): void{
+   this.getAllUsers();
+   this.getAllAgents();
+  }
 
-    
-  ];
+  constructor(private userdataService: UserdataService, private agentdataService: AgentdataService) {}
 
-  ondelete(deleteme: any) {
-     this.users.splice(deleteme,1) 
+  getAllUsers(){
+    this.userdataService.getUsers().subscribe(data=>{
+      this.userslist= data;
+    })
+  }
+
+  getAllAgents(){
+    this.agentdataService.getAgents().subscribe(data=>{
+      this.agentslist= data;
+    })
+  }
+  
+  ondeleteuser(){
+    this.userdataService.deleteUser(this.deleteid).subscribe(data=>{
+      this.userslist=data;
+      alert('User deleted succesfully');
+      window.location.reload();
+    })
+  }
+  
+  ondeleteagent(){
+    this.agentdataService.deleteAgent(this.deleteid).subscribe(data=>{
+      this.agentslist=data;
+      alert('Agent deleted succesfully');
+      window.location.reload();
+    })
+  }
+  
+  ondeleteclick(id:any){
+   this.deleteid=id;
   }
 }
