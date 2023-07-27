@@ -49,13 +49,6 @@ export class AccountmanagementComponent {
     })
   }
 
-  deleteAcc(){
-    this.userdataservice.deleteUser(this.user.userId).subscribe(data=>{
-      localStorage.clear();
-      this.router.navigate(['/userlogin']);
-    })
-  }
-
   onChange(oldpass:string,newpass:string,confirmpass:string){
 
     if(newpass===confirmpass && newpass!=''){
@@ -85,8 +78,8 @@ export class AccountmanagementComponent {
     localStorage.removeItem("username");
     localStorage.removeItem("useremail");
     localStorage.removeItem("mobileNumber");
-    this.userdataservice.deleteUser(this.user.userId).subscribe(data=>{
-      this.userslist=data;
+    this.userdataservice.deleteUser(this.user.userId).subscribe(()=>{
+      this.router.navigate(['/userlogin']);
     })
   }
 

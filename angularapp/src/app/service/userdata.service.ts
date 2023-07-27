@@ -21,9 +21,9 @@ export class UserdataService {
     return this.httpClient.get<User>(userUrl);
   }
 
-  deleteUser(userId: any): Observable<User[]>{
+  deleteUser(userId: any): Observable<any>{
     let userUrl = 'http://localhost:8080/users/'+userId;
-    return this.httpClient.delete<User[]>(userUrl);
+    return this.httpClient.delete(userUrl);
   }
   
   updateUser(UserId: any,userBody: any): Observable<User[]>{
