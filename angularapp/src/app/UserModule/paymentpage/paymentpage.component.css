@@ -1,0 +1,54 @@
+*{
+    font-family: 'Exo 2', sans-serif;
+}
+
+.container2{
+    width: 84%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 20px 20px;
+    margin: 6% 5%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.form-control{
+    width: 60%;
+    text-align: center;
+}
+.date{
+    width: 30%;
+}
+
+.slash{
+    align-self: center;
+    font-size: xx-large;
+}
+
+.btn-primary{
+    background-color: #3b4cb8;
+    color: white;
+    border: 1px solid rgba(189, 189, 189, 0.5);
+    border-radius: 10px;
+}
+
+.btn-primary:hover{
+    background-color: whitesmoke;
+    color: #3b4cb8;
+
+}
+
+.formm{
+    width: 25%;
+    margin-top: 70px;
+    padding: 25px 25px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.atmcard{
+    margin-top: -130px;
+}
+
+hr {
+    border-top: 3px dotted rgb(0, 0, 0);
+  }
