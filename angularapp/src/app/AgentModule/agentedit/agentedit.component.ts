@@ -29,12 +29,12 @@ export class AgenteditComponent {
     agents: '',
     agentid: ''
   };
+  
   deleteid= 0;
   
 
   ngOnInit(): void{
    this.getAllProperties();
-
   }
   constructor(private propertydataService: PropertydataService) {
   }
@@ -50,9 +50,10 @@ export class AgenteditComponent {
     })
   }
   
-  ondelete(id:any){
+  ondelete(){
     this.propertydataService.deleteProperty(this.deleteid).subscribe(data=>{
       this.propertylist=data;
+      alert('Property deleted succesfully');
     })
   }
 
@@ -65,6 +66,7 @@ export class AgenteditComponent {
   onSubmit(){
     this.propertydataService.updateProperty(this.property.id,this.property).subscribe(data=>{
       this.propertylist=data;
+      alert('Property updated succesfully');
       window.location.reload();
     })
   }

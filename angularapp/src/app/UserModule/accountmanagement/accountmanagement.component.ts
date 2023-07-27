@@ -49,6 +49,10 @@ export class AccountmanagementComponent {
     })
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89ad6f80f857688ba2249ce08b50d1126fe1af37
   onChange(oldpass:string,newpass:string,confirmpass:string){
 
     if(newpass===confirmpass && newpass!=''){
@@ -78,7 +82,11 @@ export class AccountmanagementComponent {
     localStorage.removeItem("username");
     localStorage.removeItem("useremail");
     localStorage.removeItem("mobileNumber");
+<<<<<<< HEAD
     this.userdataservice.deleteUser(this.user.userId).subscribe(()=>{
+=======
+    this.userdataservice.deleteUser(this.user.userId).subscribe(data=>{
+>>>>>>> 89ad6f80f857688ba2249ce08b50d1126fe1af37
       this.router.navigate(['/userlogin']);
     })
   }
