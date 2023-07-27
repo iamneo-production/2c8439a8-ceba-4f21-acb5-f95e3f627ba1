@@ -15,6 +15,8 @@ import { UserdataService } from 'src/app/service/userdata.service';
 })
 export class AdminhomeComponent {
 
+  name:string = localStorage.getItem('adminname')!;
+  
   constructor(private userdataService: UserdataService, 
     private agentdataService: AgentdataService,
     private propertydataService: PropertydataService,
