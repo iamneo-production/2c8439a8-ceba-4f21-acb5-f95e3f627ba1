@@ -63,10 +63,13 @@ public class AgentService {
         return agentRepository.save(agent);
     }
 
-    public Boolean isAgentPresent(LoginModel loginModel) {
+    public Agent isAgentPresent(LoginModel loginModel) {
         Agent agent = agentRepository.findByEmail(loginModel.getEmail());
 
-        return agent != null && bcrypt.matches(loginModel.getPassword(), agent.getPassword());
+        if(agent != null && bcrypt.matches(loginModel.getPassword(), agent.getPassword())){
+            return agent;
+        }
+        return null;
     }
 }
 
