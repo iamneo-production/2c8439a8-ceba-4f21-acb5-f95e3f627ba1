@@ -43,13 +43,22 @@ public class PropertyService {
         property.setImageUrls(propertyDetails.getImageUrls());
         property.setVideoUrls(propertyDetails.getVideoUrls());
         property.setFeatures(propertyDetails.getFeatures());
+        property.setMaplocation(propertyDetails.getMaplocation());
+        property.setFloor(propertyDetails.getFloor());
+        property.setAmenities(propertyDetails.getAmenities());
         property.setAgents(propertyDetails.getAgents());
+        property.setAgentid(propertyDetails.getAgentid());
         return propertyRepository.save(property);
     }
+
 
     // Delete a property from the database by its ID
     public void deletePropertyById(long id) {
         Property property = propertyRepository.findById(id);
         propertyRepository.delete(property);
+    }
+
+    public List<Property> getpropertyAgentid(long agentId) {
+        return propertyRepository.getpropertybyAgentid(agentId);
     }
 }
