@@ -48,6 +48,18 @@ public class Property {
     @Column(name = "Features")
     private String features;
 
+    @Column(name = "MapLocation")
+    private String maplocation;
+
+    @Column(name = "FloorPlans")
+    private String floor;
+
+    @Column(name = "Amenities")
+    private String amenities;
+
     @Column(name = "Agents")
     private String agents;
+
+    @Column(name = "AgentId")
+    private String agentid;
 }
