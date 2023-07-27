@@ -18,6 +18,7 @@ constructor(private router:Router){}
     localStorage.removeItem("adminid");
     localStorage.removeItem("adminname");
     localStorage.removeItem("adminemail");
+    localStorage.removeItem('loginstatus');
     this.router.navigate(['adminlogin']);
   }
 }

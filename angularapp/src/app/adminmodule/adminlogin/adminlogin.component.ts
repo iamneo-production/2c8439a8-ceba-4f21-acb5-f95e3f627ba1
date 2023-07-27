@@ -31,6 +31,7 @@ export class AdminloginComponent {
      localStorage.setItem('adminid',data.id);
      localStorage.setItem('adminname',data.name);
      localStorage.setItem('adminemail',data.email);
+     localStorage.setItem('loginstatus','loggedin');
     },error=>alert('Incorrect Username or Password'))
  }
 }
