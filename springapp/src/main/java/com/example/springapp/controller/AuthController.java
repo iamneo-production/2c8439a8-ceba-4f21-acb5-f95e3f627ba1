@@ -5,11 +5,21 @@ import com.example.springapp.model.UserModel;
 import com.example.springapp.service.AdminService;
 import com.example.springapp.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.springapp.model.Agent;
 import com.example.springapp.service.AgentService;
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://8081-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
+// @CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Anshi
+// @CrossOrigin(origins = "https://8081-bfbceacbaecbecafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Lakshana
+// @CrossOrigin(origins = "https://8081-eedfeafbdafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Raas
+// @CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Suganya
+// @CrossOrigin(origins = "https://8081-dcdbfcfaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Susmit
+// @CrossOrigin(origins = "https://8081-cfcedadddfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Subhashini
+// @CrossOrigin(origins = "https://8081-cdcbcbdbddadfacfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Bhavana
+// @CrossOrigin(origins = "https://8081-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Revan
 @RequestMapping
 public class AuthController {
 
@@ -35,19 +45,22 @@ public class AuthController {
 
     // Check if a user with the provided credentials exists (User login)
     @PostMapping("/user/login")
-    public Boolean isUserPresent(@RequestBody LoginModel loginModel) {
-        Boolean flag = userinfoService.isUserPresent(loginModel);
-        return flag;
+    public ResponseEntity<?> isUserPresent(@RequestBody LoginModel loginModel) {
+        UserModel user = userinfoService.isUserPresent(loginModel);
+        if (user != null) {
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     // Save a new agent
     @PostMapping("/agent/signup")
-    public String saveAgent(@RequestBody Agent agent){
+    public String saveAgent(@RequestBody Agent agent) {
 
-        Agent a= agentService.getbyEmailid(agent.getEmail());
-        if(a!=null){
+        Agent a = agentService.getbyEmailid(agent.getEmail());
+        if (a != null) {
             return "Agent already exists";
-        }else{
+        } else {
             agentService.saveAgent(agent);
             return "Agent added";
         }
@@ -55,10 +68,14 @@ public class AuthController {
 
     // Agent Login
     @PostMapping("/agent/login")
-    public Boolean isAgentPresent(@RequestBody LoginModel loginModel){
-        Boolean flag = agentService.isAgentPresent(loginModel);
-        return flag;
+    public ResponseEntity<?> isAgentPresent(@RequestBody LoginModel loginModel) {
+        Agent agent = agentService.isAgentPresent(loginModel);
+        if (agent != null) {
+            return new ResponseEntity<>(agent, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
     // Save a new admin
     @PostMapping("admin/signup") // Change the endpoint to "/admins/signup"
     public String saveAdmin(@RequestBody Admin admin) {
@@ -73,9 +90,11 @@ public class AuthController {
 
     // Admin Login
     @PostMapping("admin/login") // Change the endpoint to "/admins/login"
-    public Boolean isAdminPresent(@RequestBody LoginModel loginModel) {
-        Boolean flag = adminService.isAdminPresent(loginModel);
-        return flag;
+    public ResponseEntity<?> isAdminPresent(@RequestBody LoginModel loginModel) {
+        Admin admin = adminService.isAdminPresent(loginModel);
+        if (admin != null) {
+            return new ResponseEntity<>(admin, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
 }
