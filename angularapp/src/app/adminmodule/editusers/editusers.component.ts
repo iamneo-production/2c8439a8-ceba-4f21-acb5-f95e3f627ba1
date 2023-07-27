@@ -52,14 +52,16 @@ export class EditusersComponent {
   
   ondeleteuser(){
     this.userdataService.deleteUser(this.deleteid).subscribe(data=>{
-      window.location.reload();
       this.userslist=data;
+      alert('User deleted succesfully');
+      window.location.reload();
     })
   }
   
   ondeleteagent(){
     this.agentdataService.deleteAgent(this.deleteid).subscribe(data=>{
       this.agentslist=data;
+      alert('Agent deleted succesfully');
       window.location.reload();
     })
   }

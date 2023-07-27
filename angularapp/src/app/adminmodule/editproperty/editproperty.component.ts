@@ -49,9 +49,10 @@ export class EditpropertyComponent {
     })
   }
   
-  ondelete(id:any){
+  ondelete(){
     this.propertydataService.deleteProperty(this.deleteid).subscribe(data=>{
       this.propertylist=data;
+      alert('Property deleted succesfully');
     })
   }
 
@@ -64,6 +65,7 @@ export class EditpropertyComponent {
   onSubmit(){
     this.propertydataService.updateProperty(this.property.id,this.property).subscribe(data=>{
       this.propertylist=data;
+      alert('Property data updated succesfully');
       window.location.reload();
     })
   }

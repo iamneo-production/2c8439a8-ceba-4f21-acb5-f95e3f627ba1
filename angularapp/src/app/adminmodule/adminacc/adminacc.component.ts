@@ -33,6 +33,7 @@ export class AdminaccComponent {
   }
 
   ondeleteadmin(){
+    alert('Your account deleted succesfully');
     localStorage.removeItem("adminid");
     localStorage.removeItem("adminname");
     localStorage.removeItem("adminemail");

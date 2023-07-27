@@ -40,3 +40,8 @@
 .fc::placeholder{
     color: #3b4cb8;
 }
+
+h3{
+    text-align: center;
+    font-size: larger;
+}
