@@ -1,35 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
-
 
 .a{
-    font-family: 'Abel', sans-serif;
+  
     text-align: center;
-    font-size: 18px;
-    font-weight:900;
+    font-size: 20px;
 }
-.b{
-    font-family: 'Nunito Sans', sans-serif;
+.b, .form-label{
+  
     text-align: center;
-    font-size: 14px;
-    font-weight:900;
+    font-size: 17px;
 }
-form {
-    font-family: 'Nunito Sans', sans-serif;
-    letter-spacing: 1px;
-    outline: none;
-    border: none;
-    font-weight:900;
+.form-control {
+  
+    font-weight:400;
 }
 
-.ans-button {
-    padding: 10px 30px;
-    background-color: #212A3E ;
-    color: #fff;
-    border-radius: 10px;
-    border: none;
-  }
-  
-.ans-button:hover {
-    background-color: #6e87b9 ;
-  }
+
+
+.card-header{
+  background-color: aliceblue;
+}
+
+.btn-primary{
+  border-radius: 10px;
+  color: white ;
+  background-color: #3b4cb8 ;
+}
+.btn-primary:hover{
+  background-color: whitesmoke;
+  color: #3b4cb8 ;
+}
+.btn-secondary{
+  border-radius: 10px;
+}

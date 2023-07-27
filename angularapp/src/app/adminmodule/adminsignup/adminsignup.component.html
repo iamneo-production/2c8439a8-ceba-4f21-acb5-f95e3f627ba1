@@ -1,0 +1,31 @@
+<app-commonnavbar></app-commonnavbar>
+<div class="container">
+
+            <form class="row g-3">
+                <h3 class="m-0 mb-3">Hey new Admin!</h3>
+                <div class="col-md-12">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" #name>
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" #email>
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label">Password</label>
+                    <input [type]="pass" class="form-control" #password>
+                  </div>
+
+                  <div class="col d-flex justify-content-start">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form2Example31" (click)="onClick()"/>
+                      <label class="form-check-label" for="form2Example31"> Show Password </label>
+                    </div>
+                  </div>
+
+                <div>
+                  <button class="btn btn-primary col-12 mb-2"  (click)="onAdminlogin(name.value,email.value,password.value)" routerLink="/adminlogin">Signup</button>
+                </div> 
+                </form>
+          </div>
