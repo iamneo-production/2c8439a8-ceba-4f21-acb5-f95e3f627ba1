@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminnavbarComponent } from './AdminModule/adminnavbar/adminnavbar.component';
-import { EditpropertyComponent } from './AdminModule/editproperty/editproperty.component';
-import { EditusersComponent } from './AdminModule/editusers/editusers.component';
-import { InquiriesComponent } from './AdminModule/inquiries/inquiries.component';
+import { AdminnavbarComponent } from './adminmodule/adminnavbar/adminnavbar.component';
+import { EditpropertyComponent } from './adminmodule/editproperty/editproperty.component';
+import { EditusersComponent } from './adminmodule/editusers/editusers.component';
+import { InquiriesComponent } from './adminmodule/inquiries/inquiries.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AdminloginComponent } from './AdminModule/adminlogin/adminlogin.component';
-import { NgxTypedJsModule } from 'ngx-typed-js';
-import { AddpropertyComponent } from './AdminModule/addproperty/addproperty.component';
-import { AdminhomeComponent } from './AdminModule/adminhome/adminhome.component';
+import { AdminloginComponent } from './adminmodule/adminlogin/adminlogin.component';
+import { AddpropertyComponent } from './adminmodule/addproperty/addproperty.component';
+import { AdminhomeComponent } from './adminmodule/adminhome/adminhome.component';
 import { UserhomeComponent } from './UserModule/userhome/userhome.component';
 import { PropertylistingsComponent } from './UserModule/propertylistings/propertylistings.component';
 import { ContactusComponent } from './UserModule/contactus/contactus.component';
@@ -35,8 +34,8 @@ import { UsersignupComponent } from './UserModule/usersignup/usersignup.componen
 import { AgentsignupComponent } from './AgentModule/agentsignup/agentsignup.component';
 import { AgentloginComponent } from './AgentModule/agentlogin/agentlogin.component';
 import { UserloginComponent } from './UserModule/userlogin/userlogin.component';
-import { AdminaccComponent } from './AdminModule/adminacc/adminacc.component';
-import { AdminsignupComponent } from './AdminModule/adminsignup/adminsignup.component';
+import { AdminaccComponent } from './adminmodule/adminacc/adminacc.component';
+import { AdminsignupComponent } from './adminmodule/adminsignup/adminsignup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,8 +75,7 @@ import { AdminsignupComponent } from './AdminModule/adminsignup/adminsignup.comp
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    NgxTypedJsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

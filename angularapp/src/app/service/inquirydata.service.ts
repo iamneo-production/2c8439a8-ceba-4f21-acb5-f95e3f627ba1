@@ -9,32 +9,32 @@ import { Inquiry } from '../model/inquiry';
 })
 export class InquirydataService {
 
+  
+    //Vasanth
+    private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
+    private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/"; 
+
   constructor(private httpClient: HttpClient){}
   
 
   getInquiries(): Observable<Inquiry[]>{
-    let InquiryUrl = 'http://localhost:8080/inquiries';
-    return this.httpClient.get<Inquiry[]>(InquiryUrl);
+    return this.httpClient.get<Inquiry[]>(`${this.getUrl}`);
   }
   
   getInquiry(InquiryId: any): Observable<Inquiry>{
-    let InquiryUrl = 'http://localhost:8080/inquiries/'+InquiryId;
-    return this.httpClient.get<Inquiry>(InquiryUrl);
+    return this.httpClient.get<Inquiry>(`${this.getbyidUrl}/${InquiryId}`);
   }
 
   updateInquiry(InquiryId: any,InquiryBody: any): Observable<Inquiry[]>{
-    const InquiryUrl = 'http://localhost:8080/inquiries/'+InquiryId;
-    return this.httpClient.put<Inquiry[]>(InquiryUrl, InquiryBody);
+    return this.httpClient.put<Inquiry[]>(`${this.getbyidUrl}/${InquiryId}`, InquiryBody);
   }
   
   postInquiry(InquiryBody: any): Observable<Inquiry>{
-    const InquiryUrl = 'http://localhost:8080/inquiries';
-    return this.httpClient.post<Inquiry>(InquiryUrl, InquiryBody);
+    return this.httpClient.post<Inquiry>(`${this.getUrl}`, InquiryBody);
   }
 
   deleteInquiry(InquiryId: any): Observable<Inquiry[]>{
-    let InquiryUrl = 'http://localhost:8080/inquiries/'+InquiryId;
-    return this.httpClient.delete<Inquiry[]>(InquiryUrl);
+    return this.httpClient.delete<Inquiry[]>(`${this.getbyidUrl}/${InquiryId}`);
   }
 }
 

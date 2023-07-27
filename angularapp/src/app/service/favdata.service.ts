@@ -8,21 +8,23 @@ import { Favourite } from '../model/favourite';
 })
 export class FavdataService {
 
+    
+    //Vasanth
+    private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/favourites";  
+    private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/favourites/"; 
+
   constructor(private httpClient: HttpClient) { }
 
   
   getByUserId(id:number): Observable<any>{
-    const url = `http://localhost:8080/favourites/${id}`;
-    return this.httpClient.get(url);
+    return this.httpClient.get(`${this.getbyidUrl}/${id}`);
   }
 
   createFavourite(favourite:Favourite): Observable<any>{
-    const url = `http://localhost:8080/favourites`;
-    return this.httpClient.post(url,favourite);
+    return this.httpClient.post(`${this.getUrl}`,favourite);
   }
 
   deleteFavourite(id:number): Observable<any>{
-    const url = `http://localhost:8080/favourites/${id}`;
-    return this.httpClient.delete(url);
+    return this.httpClient.delete(`${this.getbyidUrl}/${id}`);
   }
 }
