@@ -8,22 +8,14 @@ import { Inquiry } from '../model/inquiry';
   providedIn: 'root'
 })
 export class InquirydataService {
+  
+    // //Vasanth
+    // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
+    // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/"; 
 
-  // //Vasanth
-  // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
-  // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/";  
-  // private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/";  
-  // private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/"; 
-  // private postUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";
-
-  //Suganya
-   private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries";  
-   private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/";  
-   private deleteUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/";  
-   private updateUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/";  
-   private postUrl = "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries";
-
-
+    //Suganya
+    private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries";  
+    private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/"; 
 
   constructor(private httpClient: HttpClient){}
   
@@ -37,15 +29,16 @@ export class InquirydataService {
   }
 
   updateInquiry(InquiryId: any,InquiryBody: any): Observable<Inquiry[]>{
-    return this.httpClient.put<Inquiry[]>(`${this.updateUrl}/${InquiryId}`, InquiryBody);
+    return this.httpClient.put<Inquiry[]>(`${this.getbyidUrl}/${InquiryId}`, InquiryBody);
   }
   
   postInquiry(InquiryBody: any): Observable<Inquiry>{
-    return this.httpClient.post<Inquiry>(`${this.postUrl}`, InquiryBody);
+    return this.httpClient.post<Inquiry>(`${this.getUrl}`, InquiryBody);
   }
 
   deleteInquiry(InquiryId: any): Observable<Inquiry[]>{
-    return this.httpClient.delete<Inquiry[]>(`${this.deleteUrl}/${InquiryId}`);
+    return this.httpClient.delete<Inquiry[]>(`${this.getbyidUrl}/${InquiryId}`);
+
   }
 }
 

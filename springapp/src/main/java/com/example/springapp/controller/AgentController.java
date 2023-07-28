@@ -11,7 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/agents")
-@CrossOrigin(origins = "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
+@CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/")  //Suganya
+
 public class AgentController {
     @Autowired
     private AgentService agentService;

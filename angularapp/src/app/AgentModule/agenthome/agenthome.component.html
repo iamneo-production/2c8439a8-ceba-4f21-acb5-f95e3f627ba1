@@ -2,7 +2,7 @@
 
 <div class="container2">
     <div class="dash ps-3">
-        <h2>Hey Agent {{name}}, Welcome back...</h2>
+        <h2>Hey {{name}}, Welcome back...</h2>
         <h6>Look your overview here!</h6>
     </div>
     <br>
@@ -15,22 +15,22 @@
                 </div>
                 <div class="upload d-flex border me-2">
                     <div class="">
-                    <h4>This month uploads : 4</h4>            
+                    <h4>This month uploads : {{propertylist.length < 10 ? "0" + propertylist.length : propertylist.length}}</h4>            
                     </div>
                 </div>
                 <div class="upload d-flex border me-2">
                     <div class="">
-                    <h4>Total Properties uploads : 10</h4>            
+                    <h4>Total Properties uploads : {{propertylist.length < 10 ? "0" + propertylist.length : propertylist.length}}</h4>            
                     </div>
                 </div>
                 <div class="upload d-flex border me-2">
                     <div class="">
-                    <h4>This month Sold : 2</h4>            
+                    <h4>This month Sold : 0</h4>            
                     </div>
                 </div>
                 <div class="upload d-flex border ms-auto">
                     <div class="">
-                    <h4>Total Properties Sold : 6</h4>            
+                    <h4>Total Properties Sold : 0</h4>            
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <h3>Properties added by you!</h3><button class="btn btn-primary ms-auto" routerLink="/agentedit">Go to my Properties</button>
                 </div>
                     <div class="row row-cols-1 row-cols-md-2 g-4 p-3 pt-0 card-con">
-                        <div class="card-deck" *ngFor="let item of propertylist">
+                        <div class="card-deck" *ngFor="let item of propertylist.slice(-2).reverse()">
                             <div class="card bg  h-100">
                                 <div class="row flex-column flex-xl-row">
                                     <div class="col">

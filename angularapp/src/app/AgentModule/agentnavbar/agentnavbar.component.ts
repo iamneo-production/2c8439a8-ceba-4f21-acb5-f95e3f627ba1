@@ -19,6 +19,7 @@ export class AgentnavbarComponent {
     localStorage.removeItem("agentemail");
     localStorage.removeItem("phone");
     localStorage.removeItem("profileImageUrl");
+    localStorage.removeItem('loginstatus');
     this.router.navigate(['agentlogin']);
   }
 }

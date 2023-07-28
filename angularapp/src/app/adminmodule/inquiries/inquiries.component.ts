@@ -45,6 +45,7 @@ export class InquiriesComponent {
     this.inquiry.status = "Answered";
     this.inquirydataService.updateInquiry(this.inquiry.id,this.inquiry).subscribe(data=>{
       this.inquirylist=data;
+      alert('Answer posted succesfully');
       window.location.reload();
     })
   }

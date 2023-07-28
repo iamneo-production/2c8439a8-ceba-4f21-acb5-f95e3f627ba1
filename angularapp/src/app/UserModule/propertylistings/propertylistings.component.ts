@@ -40,34 +40,20 @@ export class PropertylistingsComponent {
     name: '',
     email: '',
     phone: '',
-    profileImageUrl: '',
-    password: ''
+    profileImageUrl: ''
   };
 
-  noDataFound: boolean = false;
-  searchQuery: string = '';
-
-
-  //.........................
-  minPrice: number | undefined;
-  maxPrice: number | undefined;
-  //.........................
-
+ 
 
   ngOnInit(): void{
    this.getAllProperties();
-   
-    this.route.queryParams.subscribe(params => {
-      this.searchQuery = params['searchQuery'] || '';
-      this.filterProperties();
-    });
-
   }
   constructor(private propertydataService: PropertydataService, private router: Router,private route:ActivatedRoute) {}
   
   getAllProperties(){
     this.propertydataService.getProperties().subscribe(data=>{
       this.propertylist= data;
+      this.searchResults = data;
     })
   }
 
@@ -80,17 +66,17 @@ export class PropertylistingsComponent {
   propertyDetails(id:any){
    this.router.navigate(['details',id]);
   }
-  
-  filterProperties(): void {
-    if (this.searchQuery) {
-      this.propertylist = this.propertylist.filter(property =>
-        (property.location.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-          property.type.toLowerCase().includes(this.searchQuery.toLowerCase()))
-      );
-    } else {
-      this.property = this.property;
+
+  searchText: string = '';
+  search(){
+    if(this.searchText.trim()===''){
+      this.searchResults=this.propertylist;
+    }
+    else{
+      this.searchResults=this.propertylist.filter(property=>
+        property.location.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        property.type.toLowerCase().includes(this.searchText.toLowerCase())
+    );
     }
   }
-
-
 }

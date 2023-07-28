@@ -2,7 +2,7 @@
 <div class="container2">
   <div class="tl d-flex">
     <h3>{{property.title}} </h3>
-    <button class="btn btn-danger ms-auto fav" (click)="addToFavorites()" [disabled]="property.isAddedToFavourites">{{ property.isAddedToFavourites ? 'Added to Favourites' : 'Add to Favourites' }}</button>
+    <button class="btn btn-danger ms-auto fav" (click)="addToFavorites(property.id)" [disabled]="isFavourite()">{{ isFavourite() ? 'Added to Favourites' : 'Add to Favourites' }}</button>
     <button class="btn btn-primary ms-3" routerLink="/paymentpage" *ngIf="property.status=== 'For Sale'">Buy this property</button>
     <button class="btn btn-primary ms-3" routerLink="/paymentpage" *ngIf="property.status=== 'For Rent'">Rent this property</button>
     <button class="btn btn-primary ms-3" routerLink="/paymentpage" *ngIf="property.status=== 'Sold'" disabled>Buy this property</button>
@@ -126,7 +126,7 @@
                   <input type="number" class="form-control">
                 </div>
                 <div class="col-md-12">
-                  <button class="btn col-12 mt-4 " data-bs-toggle="modal" data-bs-target="#deleteModel1"
+                  <button class="btn btn-primary col-12 mt-4 " data-bs-toggle="modal" data-bs-target="#deleteModel1"
                     type="button">Contact</button>
                   <div class="modal fade" id="deleteModel1" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -154,153 +154,3 @@
         </div>
       </div>
     </div>
-<!-- <div class="container2">
-  <div class="row row-cols-1 g-4 m-0 pb-4 card-con">
-    <div class="card bg m-0">
-      <div class="row flex-column flex-xl-row">
-        <div class="col p-0">
-          <img class="img-fluid h-100" src={{property.imageUrls}} alt="Property img" style="border-radius: 5px;">
-
-           <div id="carouselExample" class="carousel slide">
-                           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                               <span class="visually-hidden">Previous</span>
-                           </button>
-                           <div class="carousel-inner">
-                             <div class="carousel-property active ">
-                               <img src="/assets/1.jpg" class="img-fluid rounded-start h-200" alt="...">
-                             </div>
-                             <div class="carousel-property">
-                                 <img src="/assets/2.jpg" class="img-fluid rounded-start h-200" alt="...">
-                             </div>
-                             <div class="carousel-property">
-                               <img src="/assets/3.jpg" class="img-fluid rounded-start h-200" alt="...">
-                             </div>
-                           </div>
-                           <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                             <span class="visually-hidden">Next</span>
-                           </button>
-                       </div> 
-        </div>
-        <div class="col">
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <p class="card-title fs-3">{{property.title}}</p> <img *ngIf="property.status==='On Sale'"
-                src="../../assets/Sale.png" style="height: 50px; width: 50px;"><img *ngIf="property.status==='Sold'"
-                src="../../assets/sold.png" style="height: 50px; width: 50px;">
-            </div>
-            <span class="badge text-bg-primary mb-2 fs-6 rounded-pill">{{property.type}}</span>
-            <span class="badge text-bg-primary mb-1 rounded-pill">{{property.status}}</span>
-            <p class="card-title fs-4">{{property.address}}</p>
-            <p class="card-title fs-5">Id number :
-              <small class="text-muted">{{property.id}}</small>
-            </p>
-            <p class="card-title fs-5">Price :
-              <small class="text-muted">₹ {{property.price}}</small>
-            </p>
-            <p class="card-title fs-5">Features :
-              <small class="text-muted">{{property.features}}</small>
-            </p>
-            <p class="card-title fs-5">Agent :
-              <small class="text-muted">{{property.agents}}</small>
-            </p>
-            <div class="row  g-1">
-              <button class="btn col-8 me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact
-                Owner</button>
-
-              <button class="btn fav col-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to Fav</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <nav class="navbar px-3">
-    <ul class="nav">
-      <li class="nav-item">
-        <a type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0">Description</a>
-      </li>
-      <li class="nav-item">
-        <a type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1">Property overview</a>
-      </li>
-      <li class="nav-item">
-        <a type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2">Agent overview</a>
-      </li>
-    </ul>
-  </nav>
-  <hr style="margin: 0px 30%;">
-  <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <p class="card-title fs-5 p-2">{{property.description}}</p>
-        </div>
-        <div class="carousel-item">
-          <div class="overviewcon">
-            <div class="a">Property ID : {{property.id}}</div>
-            <div class="b">Address : {{property.address}}</div>
-            <div class="c">Price : {{property.price}}</div>
-            <div class="d">Type : {{property.type}}</div>
-            <div class="e">Location : {{property.location}}</div>
-            <div class="f">Status : {{property.status}}</div>
-            <div class="g">Agent : {{property.agents}}</div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container-fluid d-flex">
-            <div class="detail me-4">
-              <div class="d-flex">
-                <img class="img" src="../assets/MS.jpg"
-                  style="height: 50px; width: 50px;margin-right: 10px; border-radius: 50px;">
-                <h3 class="mt-2">{{property.agents}}</h3>
-              </div>
-              <div class="det">
-                <h5 class="">PinPoint Real Estate</h5>
-                <h5>Listings uploaded by {{property.agents}} is : 3</h5>
-                <button class="tolist">Lists uploaded by {{property.agents}} -></button>
-              </div>
-            </div>
-            <div class="rev">
-              <form class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">Name</label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control">
-                </div>
-                <div class="col-md-12">
-                  <label class="form-label">Phone</label>
-                  <input type="number" class="form-control">
-                </div>
-                <div class="col-md-12">
-                  <button class="btn col-12 mt-4 mb-4" data-bs-toggle="modal" data-bs-target="#deleteModel1"
-                    type="button">Contact</button>
-                  <div class="modal fade" id="deleteModel1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Calling Agent...</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          You are calling agent "{{property.agents}}" right now!
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-

@@ -12,26 +12,25 @@ export class AgentprofileComponent {
   agentslist: Agent[] = [];
 
   agent: Agent= {
-    id: '',
-    name: '',
-    email: '',
-    phone: '',
-    profileImageUrl: '',
-    password: ''
+    id:  localStorage.getItem('id')!,
+    name:  localStorage.getItem('name')!,
+    email: localStorage.getItem('agentemail')!,
+    phone:  localStorage.getItem('phone')!,
+    profileImageUrl: localStorage.getItem('profileImageUrl')!
   };
 
   constructor(private agentdataservice:AgentdataService){}
 
-  agentname:string = localStorage.getItem('name')!;
-  agentemail:string = localStorage.getItem('agentemail')!;
-  profileImageUrl:string = localStorage.getItem('profileImageUrl')!;
-  agentId:string = localStorage.getItem('id')!;
-  phone:string = localStorage.getItem('phone')!;
 
-  onSubmit(agentId:any){
-    this.agentdataservice.updateAgent(agentId,this.agent).subscribe(data=>{
+  onSubmit(){
+    this.agentdataservice.updateAgent(this.agent.id,this.agent).subscribe(data=>{
       this.agentslist=data;
-      window.location.reload();
+      console.log(data)
+      alert('Your data uploaded succesfully');
+      localStorage.setItem("id",this.agent.id+'')
+      localStorage.setItem("name",this.agent.name+'')
+      localStorage.setItem("email",this.agent.email+'')
+      localStorage.setItem("phone",this.agent.phone+'')
     })
   }
   
@@ -41,7 +40,7 @@ export class AgentprofileComponent {
     localStorage.removeItem("agentemail");
     localStorage.removeItem("phone");
     localStorage.removeItem("profileImageUrl");
-    this.agentdataservice.deleteAgent(this.agentId).subscribe(data=>{
+    this.agentdataservice.deleteAgent(this.agent.id).subscribe(data=>{
       this.agentslist=data;
     })
   }

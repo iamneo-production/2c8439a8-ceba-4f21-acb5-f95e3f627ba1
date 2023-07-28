@@ -14,17 +14,15 @@ public class UserInfoService {
 
     @Autowired
     private UserInfoRepository userRepo;
-    private BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+
 
     public UserModel saveUser(UserModel user) {
-        String encryptedPwd = bcrypt.encode(user.getPassword());
-        user.setPassword(encryptedPwd);
         return userRepo.save(user);
     }
 
     public UserModel isUserPresent(LoginModel loginModel) {
         UserModel user = userRepo.findByEmail(loginModel.getEmail());
-       if(user != null && bcrypt.matches(loginModel.getPassword(), user.getPassword())){
+       if(user != null && loginModel.getPassword().matches(user.getPassword())){
            return user;
         }
        return null;
@@ -35,8 +33,6 @@ public class UserInfoService {
     }
 
     public void addUser(UserModel user) {
-        String encryptedPwd = bcrypt.encode(user.getPassword());
-        user.setPassword(encryptedPwd);
         userRepo.save(user);
     }
 

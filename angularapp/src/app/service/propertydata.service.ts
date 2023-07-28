@@ -9,19 +9,16 @@ import { Property } from '../model/property';
 export class PropertydataService {
   getPropertyById: any;
 
-  //  //Vasanth
-  //  private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties";  
-  //  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/";  
-  //  private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/";  
-  //  private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/"; 
-  //  private postUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/";
- 
-  //Suganya
-   private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties";  
-   private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/";  
-   private deleteUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/";  
-   private updateUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/";  
-   private postUrl = "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties";
+
+    //Vasanth
+    // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties";  
+    // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/"; 
+    // private getbyagentidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/getbyAgentid/"; 
+
+    //Suganya
+    private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties";  
+    private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/"; 
+    private getbyagentidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/getbyAgentid/"; 
 
   constructor(private httpClient: HttpClient){}
   
@@ -31,7 +28,8 @@ export class PropertydataService {
   }
   getPropertybyAgentid(): Observable<Property[]>{
     let agentId = localStorage.getItem('id');
-    return this.httpClient.get<Property[]>(`${this.getbyidUrl}/${agentId}`);
+    return this.httpClient.get<Property[]>(`${this.getbyagentidUrl}/${agentId}`);
+
   }
   
   getProperty(propertyId: any): Observable<Property>{
@@ -40,15 +38,17 @@ export class PropertydataService {
   }
 
   updateProperty(propertyId: any,propertyBody: any): Observable<Property[]>{
-    return this.httpClient.put<Property[]>(`${this.updateUrl}/${propertyId}`, propertyBody);
+
+    return this.httpClient.put<Property[]>(`${this.getbyidUrl}/${propertyId}`, propertyBody);
   }
   
   postProperty(propertyBody: any): Observable<Property>{
-    return this.httpClient.post<Property>(`${this.postUrl}`, propertyBody);
+    return this.httpClient.post<Property>(`${this.getUrl}`, propertyBody);
   }
 
   deleteProperty(propertyId: any): Observable<Property[]>{
-    return this.httpClient.delete<Property[]>(`${this.deleteUrl}/${propertyId}`);
+    return this.httpClient.delete<Property[]>(`${this.getbyidUrl}/${propertyId}`);
+
   }
 }
 

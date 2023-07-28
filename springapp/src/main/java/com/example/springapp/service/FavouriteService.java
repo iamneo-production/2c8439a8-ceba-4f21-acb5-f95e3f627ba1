@@ -13,40 +13,21 @@ public class FavouriteService {
     @Autowired
     private FavouriteRepository favouriteRepository;
 
-    // Get all favourites
-    public List<Favourite> getAllFavourites() {
-        return favouriteRepository.findAll();
-    }
-
-    // Get favourite by id
-    public Favourite getFavouriteById(long id) {
-        Optional<Favourite> optionalFavourite = favouriteRepository.findById(id);
-        return optionalFavourite.orElse(null);
-    }
 
     // Create a new favourite
     public Favourite createFavourite(Favourite favourite) {
         return favouriteRepository.save(favourite);
     }
 
-    // Update favourite by id
-    public Favourite updateFavourite(long id, Favourite favouriteDetails) {
-        Optional<Favourite> optionalFavourite = favouriteRepository.findById(id);
-        if (optionalFavourite.isPresent()) {
-            Favourite existingFavourite = optionalFavourite.get();
-            existingFavourite.setImg(favouriteDetails.getImg());
-            existingFavourite.setPropertyid(favouriteDetails.getPropertyid());
-            existingFavourite.setType(favouriteDetails.getType());
-            existingFavourite.setPrice(favouriteDetails.getPrice());
-            existingFavourite.setName(favouriteDetails.getName());
-            return favouriteRepository.save(existingFavourite);
-        } else {
-            return null; // Favourite with the given id not found
-        }
+    // Get all favourites by user_id
+    public List<Favourite> getAllByUserId(Long userid){
+        return favouriteRepository.findByUserId(userid);
     }
 
     // Delete favourite by id
-    public void deleteFavouriteById(long id) {
+    public Favourite deleteFavouriteById(long id) {
+        Favourite favourite = favouriteRepository.findById(id).get();
         favouriteRepository.deleteById(id);
+        return favourite;
     }
 }

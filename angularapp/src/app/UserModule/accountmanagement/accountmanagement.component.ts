@@ -11,11 +11,8 @@ import { UserdataService } from 'src/app/service/userdata.service';
   styleUrls: ['./accountmanagement.component.css']
 })
 export class AccountmanagementComponent {
-  username =  localStorage.getItem('username');
-  userId =  localStorage.getItem('userId');
-  useremail =  localStorage.getItem('useremail');
-  userphone =  localStorage.getItem('mobileNumber');
-  inquirylist : Inquiry[] = []
+
+  inquirylist : Inquiry[] = [];
 
   inquiry: Inquiry= {
     id: "",
@@ -29,11 +26,10 @@ export class AccountmanagementComponent {
 
   userslist: User[] = [];
   user: User= {
-    userId: '',
-    username: '',
-    email: '',
-    mobileNumber: '',
-    password:''
+    userId: localStorage.getItem('userId')!,
+    username: localStorage.getItem('username')!,
+    email: localStorage.getItem('useremail')!,
+    mobileNumber: localStorage.getItem('mobileNumber')!
   }; 
 
   ngOnInit():void {
@@ -53,23 +49,28 @@ export class AccountmanagementComponent {
     })
   }
 
-  deleteAcc(){
-    this.userdataservice.deleteUser(this.userId).subscribe(data=>{
-      localStorage.clear();
-      this.router.navigate(['/userlogin']);
-    })
-  }
 
-  onedit(userId:any){
-    this.userdataservice.getUser(userId).subscribe(data=>{
-      this.user=data;
-    })
+  onChange(oldpass:string,newpass:string,confirmpass:string){
+
+    if(newpass===confirmpass && newpass!=''){
+      let id = Number(localStorage.getItem('userId'))
+      this.userdataservice.updatePass(id,oldpass,newpass).subscribe(data=>{
+        alert('Password Updated Successfully!')
+      },error=>{alert('Incorrect Current Password,Updation failed')})
+    }
+    else{
+      alert('Password Mismatched')
+    }
   }
 
   onSubmit(){
     this.userdataservice.updateUser(this.user.userId,this.user).subscribe(data=>{
       this.userslist=data;
       console.log(data)
+      localStorage.setItem("userId",this.user.userId+'')
+      localStorage.setItem("username",this.user.username+'')
+      localStorage.setItem("email",this.user.email+'')
+      localStorage.setItem("mobileNumber",this.user.mobileNumber+'')
     })
   }
 
@@ -78,8 +79,8 @@ export class AccountmanagementComponent {
     localStorage.removeItem("username");
     localStorage.removeItem("useremail");
     localStorage.removeItem("mobileNumber");
-    this.userdataservice.deleteUser(this.userId).subscribe(data=>{
-      this.userslist=data;
+    this.userdataservice.deleteUser(this.user.userId).subscribe(data=>{
+      this.router.navigate(['/userlogin']);
     })
   }
 

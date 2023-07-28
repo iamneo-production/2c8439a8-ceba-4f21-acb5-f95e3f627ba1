@@ -21,23 +21,23 @@
                 <br>
                 <div class="col-md-6">
                     <label class="form-label">Name</label>
-                    <input type="text" class="form-control" [(ngModel)]="agentname" [ngModelOptions]="{standalone: true}">
+                    <input type="text" class="form-control" [(ngModel)]="agent.name" [ngModelOptions]="{standalone: true}">
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" [(ngModel)]="agentemail" [ngModelOptions]="{standalone: true}">
+                    <input type="email" class="form-control" [(ngModel)]="agent.email" [ngModelOptions]="{standalone: true}">
                   </div>
                   <div class="col-md-12">
                     <label class="form-label">Profile Image Url</label>
-                    <input type="email" class="form-control" [(ngModel)]="profileImageUrl" [ngModelOptions]="{standalone: true}">
+                    <input type="email" class="form-control" [(ngModel)]="agent.profileImageUrl" [ngModelOptions]="{standalone: true}">
                   </div>
                   <div class="col-md-12">
                     <label class="form-label">Phone</label>
-                    <input type="email" class="form-control" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}">
+                    <input type="email" class="form-control" [(ngModel)]="agent.phone" [ngModelOptions]="{standalone: true}">
                   </div>
             
                   <div>
-                  <button class="btn btn-primary col-12 mt-3" (click)="onSubmit(this.agentId)">Submit</button>
+                  <button class="btn btn-primary col-12 mt-3" (click)="onSubmit()">Submit</button>
                   </div>
                 </form>
           </div>
@@ -46,7 +46,7 @@
                 <h4 class="m-0">This action will delete your account permanently!</h4>
                 <div class="col-md-12">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control"  [(ngModel)]="agentemail" [ngModelOptions]="{standalone: true}">
+                    <input type="email" class="form-control"  [(ngModel)]="agent.email" [ngModelOptions]="{standalone: true}">
                   </div>
                   <div class="col-12">
                     <label class="form-label">Password</label>

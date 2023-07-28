@@ -10,7 +10,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/properties")
-@CrossOrigin(origins = "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
+
+@CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/")  //Suganya
+
 public class PropertyController {
 
     @Autowired
@@ -48,7 +50,7 @@ public class PropertyController {
         propertyService.deletePropertyById(id);
         return propertyService.getAllProperty();
     }
-
+    // Get property by Agent Id
     @GetMapping("/getbyAgentid/{agentId}")
     public List<Property> getpropertybyAgentid(@PathVariable("agentId") long agentId){
         return propertyService.getpropertyAgentid(agentId);

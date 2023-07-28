@@ -8,24 +8,21 @@ import { User } from '../model/user';
 })
 export class UserdataService {
 
-  // //Vasanth
+ 
+
+  //Vasanth
   // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users";  
-  // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
-  // private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
-  // private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
-  // private postUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users";  
+  // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/"; 
+  // private getpass =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/updatepass/"; 
   // private loginUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/login";  
   // private signupUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/signup";  
 
-
-  //Suganya
+  // Suganya
   private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/users";  
-  private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
-  private deleteUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
-  private updateUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
-  private postUrl = "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/users";
+  private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/users/"; 
+  private getpass =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/users/updatepass/"; 
   private loginUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/user/login";  
-  private signupUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";  
+  private signupUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";   
 
   constructor(private httpClient: HttpClient){}
   
@@ -39,15 +36,15 @@ export class UserdataService {
   }
 
   deleteUser(userId: any): Observable<User[]>{
-    return this.httpClient.delete<User[]>(`${this.deleteUrl}/${userId}`);
+    return this.httpClient.delete<User[]>(`${this.getbyidUrl}/${userId}`);
   }
   
   updateUser(userId: any,userBody: any): Observable<User[]>{
-    return this.httpClient.put<User[]>(`${this.updateUrl}/${userId}`, userBody);
+    return this.httpClient.put<User[]>(`${this.getbyidUrl}/${userId}`, userBody);
   }
   
   postUser(userBody: any): Observable<User>{
-    return this.httpClient.post<User>(`${this.postUrl}`, userBody);
+    return this.httpClient.post<User>(`${this.getbyidUrl}`, userBody);
   }
 
   loginUser(user:any): Observable<any>{
@@ -55,6 +52,9 @@ export class UserdataService {
   }
   signupUser(user:any): Observable<any>{
       return this.httpClient.post(`${this.signupUrl}`,user);
+  }
+  updatePass(id:number,oldpass:string,newpass:string):Observable<any>{
+    return this.httpClient.put(`${this.getpass}/${id}/${oldpass}/${newpass}`,null)
   }
 }
 

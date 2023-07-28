@@ -36,7 +36,6 @@ public class AdminService {
 
         admin.setName(adminDetails.getName());
         admin.setEmail(adminDetails.getEmail());
-        admin.setPassword(adminDetails.getPassword());
 
         return adminRepository.save(admin);
     }
