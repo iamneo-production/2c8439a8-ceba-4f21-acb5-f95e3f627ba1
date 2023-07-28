@@ -15,5 +15,4 @@ public interface UserInfoRepository extends JpaRepository<UserModel,Long> {
 
     UserModel findByuserId(long userId);
 
-    List<UserModel> findByUserRole(String userRole);
 }

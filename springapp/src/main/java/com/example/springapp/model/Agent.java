@@ -1,17 +1,19 @@
 package com.example.springapp.model;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "agent_list")
+@Table(name = "agent_info")
 public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +28,9 @@ public class Agent {
     @Column(name = "Phone")
     private String phone;
 
-    @Column(name = "Profile Image")
+    @Column(name = "Profile_Image")
     private String profileImageUrl;
+
+    @Column(name = "password")
+    private String password;
 }

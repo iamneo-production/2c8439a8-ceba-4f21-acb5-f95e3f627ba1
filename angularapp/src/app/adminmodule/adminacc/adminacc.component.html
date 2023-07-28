@@ -1,0 +1,54 @@
+<app-adminnavbar></app-adminnavbar>
+
+    <div class="container">
+    
+        <nav class="navbar px-3">
+            <ul class="nav">
+              <li class="nav-item">
+                <a type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0">Update Profile</a>
+              </li>
+              <li class="nav-item">
+                <a type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1">Delete Account</a>
+              </li>
+            </ul>
+        </nav>
+        <hr style="margin: 0px 30% 1%;">
+        <div id="carouselExampleIndicators" class="carousel carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <form class="row g-3">
+                    <h4 class="m-0">Update your data here...</h4>
+                    <br>
+                    <div class="col-md-12">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="adminname" [ngModelOptions]="{standalone: true}">
+                      </div>
+                      <div class="col-md-12">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" [(ngModel)]="adminemail" [ngModelOptions]="{standalone: true}">
+                      </div>
+                
+                      <div>
+                      <button class="btn btn-primary col-12 mt-3">Submit</button>
+                      </div>
+                    </form>
+              </div>
+              <div class="carousel-item">
+                <form class="row g-3">
+                    <h4 class="m-0">This action will delete your account permanently!</h4>
+                    <div class="col-md-12">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control"  [(ngModel)]="adminemail" [ngModelOptions]="{standalone: true}">
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control">
+                      </div>
+                      <div>
+                      <button class="btn btn-danger col-12 mt-3"  (click)="ondeleteadmin()" routerLink="/adminlogin">Delete</button>
+                      </div>
+                    </form>
+              </div>
+          </div>
+    </div>
+    </div>

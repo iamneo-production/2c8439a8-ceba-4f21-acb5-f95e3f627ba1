@@ -1,0 +1,76 @@
+<app-agentnavbar></app-agentnavbar>
+
+<div class="container2">
+    <div class="dash ps-3">
+        <h2>Hey Agent {{name}}, Welcome back...</h2>
+        <h6>Look your overview here!</h6>
+    </div>
+    <br>
+    <div class="container-fluid">
+            <div class="total  d-flex">
+                <div class="upload d-flex border me-2">
+                    <div class="">
+                    <h4>Agent Id : {{agentid}}</h4>            
+                    </div>
+                </div>
+                <div class="upload d-flex border me-2">
+                    <div class="">
+                    <h4>This month uploads : 4</h4>            
+                    </div>
+                </div>
+                <div class="upload d-flex border me-2">
+                    <div class="">
+                    <h4>Total Properties uploads : 10</h4>            
+                    </div>
+                </div>
+                <div class="upload d-flex border me-2">
+                    <div class="">
+                    <h4>This month Sold : 2</h4>            
+                    </div>
+                </div>
+                <div class="upload d-flex border ms-auto">
+                    <div class="">
+                    <h4>Total Properties Sold : 6</h4>            
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview border">
+                <div class="view">
+                    <div class=" head d-flex">
+                    <h3>Properties added by you!</h3><button class="btn btn-primary ms-auto" routerLink="/agentedit">Go to my Properties</button>
+                </div>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 p-3 pt-0 card-con">
+                        <div class="card-deck" *ngFor="let item of propertylist">
+                            <div class="card bg  h-100">
+                                <div class="row flex-column flex-xl-row">
+                                    <div class="col">
+                                       <img class="img-fluid h-100 " src={{item.imageUrls}} alt="Property img">
+                                    </div>
+                                    <div class="col">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <p class="card-title fs-3 fw-bold">₹ {{item.price}}</p> <img *ngIf="item.status==='For Sale'" src="../../assets/Sale.png" style="height: 50px; width: 50px;"><img *ngIf="item.status==='Sold'" src="../../assets/sold.png" style="height: 50px; width: 50px;"><img *ngIf="item.status==='For Rent'" src="../../assets/rent.png" style="height: 50px; width: 50px;">
+                                            </div>
+                                            <span class="badge text-bg-primary mb-2 me-1 rounded-pill">{{item.type}}</span>
+                                            <p class="card-title fs-5 fw-bold">{{item.title}}</p>
+                                            <p class="card-title fw-bold">Id number : 
+                                                <small class="text-muted">{{item.id}}</small>
+                                            </p>
+
+                                            <p class="card-title fw-bold">Features : 
+                                                <small class="text-muted">{{item.features}}</small>
+                                            </p>
+                                            <div class="row  g-1">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+
+</div>

@@ -1,6 +1,6 @@
 package com.example.springapp.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +16,7 @@ public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long Id;
 
     @Column(name = "Title")
     private String title;
@@ -48,6 +48,18 @@ public class Property {
     @Column(name = "Features")
     private String features;
 
+    @Column(name = "MapLocation")
+    private String maplocation;
+
+    @Column(name = "FloorPlans")
+    private String floor;
+
+    @Column(name = "Amenities")
+    private String amenities;
+
     @Column(name = "Agents")
     private String agents;
+
+    @Column(name = "AgentId")
+    private String agentid;
 }
