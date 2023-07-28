@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-=======
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
->>>>>>> b0c4b7c59d43d8a047c26597d6a84017127db85b
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-<<<<<<< HEAD
-		<version>2.7.10</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>springapp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>springapp</name>
-	<description>Demo project for Spring Boot</description>
-=======
 		<version>2.7.12</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
@@ -28,35 +13,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AdminModule</name>
 	<description>Backend for admin module</description>
->>>>>>> b0c4b7c59d43d8a047c26597d6a84017127db85b
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
-<<<<<<< HEAD
-=======
 
->>>>>>> b0c4b7c59d43d8a047c26597d6a84017127db85b
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-<<<<<<< HEAD
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-=======
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
->>>>>>> b0c4b7c59d43d8a047c26597d6a84017127db85b
 		</dependency>
 
 		<dependency>
@@ -66,45 +35,6 @@
 		</dependency>
 
 		<dependency>
-<<<<<<< HEAD
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.2</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-
-
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
-=======
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -133,15 +63,12 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
->>>>>>> b0c4b7c59d43d8a047c26597d6a84017127db85b
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<<<<<<< HEAD
-=======
 				<configuration>
 					<excludes>
 						<exclude>
@@ -150,13 +77,8 @@
 						</exclude>
 					</excludes>
 				</configuration>
->>>>>>> b0c4b7c59d43d8a047c26597d6a84017127db85b
 			</plugin>
 		</plugins>
 	</build>
 
-<<<<<<< HEAD
 </project>
-=======
-</project>
->>>>>>> b0c4b7c59d43d8a047c26597d6a84017127db85b
