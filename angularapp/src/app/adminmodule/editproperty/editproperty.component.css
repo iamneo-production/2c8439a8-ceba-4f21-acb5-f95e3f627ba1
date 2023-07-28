@@ -1,172 +1,46 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  
-   .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    height: 60%;
-    
-  }
-  
-  .card {
-    background-color: #9BA4B5;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
-    padding: 20px;
-    margin-top: 3%;
-    width: 100%;
-    height: 100%;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  
-  .card:hover{
-    box-shadow: 0 2px 6px rgba(0,0,0,0.5), 0 3px 6px rgba(0,0,0,0.5);
-  }
-  
-  .property-image {
-    width: 100%;
-    height: 30%;
-    object-fit: cover;
+.btn-primary{
+    background-color: #3b4cb8;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn-primary:hover{
+    background-color: whitesmoke;
+    color: #3b4cb8;
+}
+.btn-danger,.btn-secondary{
+    border-radius: 10px;
+}
+.bg{
+    background-color: aliceblue;
     border-radius: 15px;
-    margin-bottom: 10px;
-  }
-  
-  .property-description {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-  }
+}
 
-    .property-id {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .property-type {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 19px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
+.card-con{
+    justify-content: center;
+}
 
-  .location{
-    font-family: 'Nunito Sans', sans-serif;
-     font-size: 19px;
-     font-weight: bold;
-    margin-bottom: 5px;
-  }
+.bg:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
-   .price {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 19px;
-    font-weight: bold;
-  }
+.img-fluid{
+    border-radius: 15px;
+}
 
-  .visit-button {
-    font-family: 'Nunito Sans', sans-serif;
-    display: inline-block;
-    padding: 10px 10px;
-    background-color: #212A3E ;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 25px;
-    margin-top: 20px;
-    border: none;
-  }
-  
-  .visit-button:hover {
-    background-color: #6e87b9 ;
-  }
+.searchbar{
+    margin: 2% 35%;
+}
+.fc{
+    text-align: center; 
+    border-radius: 15px;  
+    border: 1px solid; 
+}
+.fc::placeholder{
+    color: #3b4cb8;
+}
 
-    .delete-button {
-    display: inline-block;
-    padding: 10px 10px;
-    background-color: #212A3E ;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    margin-top: 10px;
-    border: none;
-  }
-  
-  .delete-button:hover {
-    background-color: #d60202;
-  }
-
-
-  /* Responsive styles */
-  @media screen and (max-width: 767px) {
-    .card {
-      width: 100%;
-    }
-  }
-  @media screen and (min-width: 768px) and (max-width: 991px) {
-    .card {
-      width: calc(50% - 10px);
-    }
-  }
-  @media screen and (min-width: 992px) {
-    .card {
-      width: calc(25% - 20px);
-    }
-  }
-  
-  
-h1{
-    font-family: 'Abel', sans-serif;
+h3{
     text-align: center;
-    font-size: 30px;
-    font-weight: 900;
+    font-size: larger;
 }
-.logs *{
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-}
-
-
-.input-group{
-    width: 50%;
-    height: 50px;
-    margin: 25px 0px;
-}
-
-.form-control, .form-select{
-    width: 50%;
-    height: 50px;
-    margin-left: 10px;
-    border-radius: 15px;
-    border-color: black;
-}
-
-.addbtn{
-  text-align: right;
-  margin-right: 10px;
-  margin-top: -96px;
-}
-.addbutton{
-    font-family: 'Nunito Sans', sans-serif;
-    display: inline-block;
-    padding: 17px 10%;
-    background-color: #212A3E ;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 15px;
-    margin-top: 20px;
-    border: none;
-}
-
-.addbutton:hover {
-    background-color: #394867 ;
-  }
-    
-* {
-    box-sizing: border-box;
-  }
-  

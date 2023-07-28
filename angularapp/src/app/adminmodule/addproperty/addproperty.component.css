@@ -1,0 +1,13 @@
+*{
+    font-size: large;
+}
+.btn{
+    background-color: whitesmoke;
+    background-color: #3b4cb8;
+    color: white;
+    border-radius: 10px;
+}
+.btn:hover{
+    color: #3b4cb8;
+    background-color: whitesmoke;
+}

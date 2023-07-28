@@ -1,0 +1,27 @@
+.searchbar{
+    margin: 5% 10% 0px 60px;
+}
+.fc{
+    text-align: center; 
+    border-top-left-radius: 15px;  
+    border-top-right-radius: 0px;  
+    border-bottom-left-radius: 15px;  
+    border-bottom-right-radius: 0px;  
+    border: 1px solid; 
+}
+.fc::placeholder{
+    color: #3b4cb8;
+}
+div button{
+    background-color:#3b4cb8;
+    color: white;
+    width: 100px;
+    border: none;
+    border-top-right-radius: 15px;  
+    border-bottom-right-radius: 15px; 
+}
+div button:hover{
+    opacity: .9;
+    cursor: pointer;
+}
+  
