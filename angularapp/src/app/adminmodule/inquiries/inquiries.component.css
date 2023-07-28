@@ -29,6 +29,6 @@
   background-color: whitesmoke;
   color: #3b4cb8 ;
 }
-.btn-secondary{
+.btn-secondary,.btn-danger{
   border-radius: 10px;
 }
