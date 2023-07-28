@@ -11,8 +11,8 @@ com/example/springapp/controller/PropertyController.class
 com/example/springapp/controller/UserModelController.class
 com/example/springapp/model/Inquiry.class
 com/example/springapp/controller/AuthController.class
-com/example/springapp/model/Agent.class
 com/example/springapp/service/InquiryService.class
+com/example/springapp/model/Agent.class
 com/example/springapp/SpringappApplication.class
 com/example/springapp/repository/InquiryRepository.class
 com/example/springapp/model/Favourite.class
@@ -20,8 +20,8 @@ com/example/springapp/model/Admin.class
 com/example/springapp/model/UserModel.class
 com/example/springapp/repository/UserInfoRepository.class
 com/example/springapp/service/UserInfoService.class
-com/example/springapp/repository/AgentRepository.class
 com/example/springapp/controller/AdminController.class
+com/example/springapp/repository/AgentRepository.class
 com/example/springapp/controller/FavouriteController.class
 com/example/springapp/repository/PropertyRepository.class
 com/example/springapp/model/Property.class
