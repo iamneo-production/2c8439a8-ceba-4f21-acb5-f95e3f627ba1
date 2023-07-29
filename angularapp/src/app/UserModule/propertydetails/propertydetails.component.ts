@@ -14,6 +14,7 @@ export class PropertydetailsComponent {
   id: any;
   property: any;
   AgentId:string = localStorage.getItem('id')!;
+  Agentname:string = localStorage.getItem('name')!;
   favourites: Favourite[] = [];
   
   propertylist: Property[] = [];

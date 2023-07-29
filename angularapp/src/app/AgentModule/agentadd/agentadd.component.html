@@ -1,6 +1,7 @@
 <app-agentnavbar></app-agentnavbar>
 
 <div class="container2">
+    <h2 class="list">Add Property here...</h2>
     <form class="row g-3">
         <div class="col-md-4">
             <label class="form-label">Title</label>
@@ -77,22 +78,17 @@
             [ngModelOptions]="{standalone: true}">
         </div>
  
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label for="inputImage" class="form-label">Map Location</label>
             <input type="text" class="form-control" [(ngModel)]="property.maplocation" [ngModelOptions]="{standalone: true}">
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label for="inputZip" class="form-label">Amenities</label>
             <input type="text" class="form-control" [(ngModel)]="property.amenities" [ngModelOptions]="{standalone: true}">
         </div>
-        
-        <div class="col-md-3">
-            <label for="inputZip" class="form-label">Agent</label>
-            <input type="text" class="form-control" [(ngModel)]="property.agents" [ngModelOptions]="{standalone: true}">
-        </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label for="inputZip" class="form-label">Agent Id</label>
             <input type="text" class="form-control" [(ngModel)]="property.agentid" [ngModelOptions]="{standalone: true}">
         </div>

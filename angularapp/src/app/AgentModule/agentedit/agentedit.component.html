@@ -53,7 +53,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -114,21 +114,17 @@
                     <label for="inputCity" class="form-label">Image Url</label>
                     <input type="text" class="form-control" [(ngModel)]="property.imageUrls" [ngModelOptions]="{standalone: true}">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <label for="inputZip" class="form-label">Video Url</label>
                     <input type="text" class="form-control" [(ngModel)]="property.videoUrls" [ngModelOptions]="{standalone: true}">
                 </div>
-                <div class="col-md-6">
-                    <label for="inputZip" class="form-label">Agent</label>
-                    <input type="text" class="form-control" [(ngModel)]="property.agents" [ngModelOptions]="{standalone: true}">
+                <div class="col-md-3">
+                    <label for="inputZip" class="form-label">Floor Plans</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.floor" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="col-md-6">
                     <label for="inputCity" class="form-label">Map Location</label>
                     <input type="text" class="form-control" [(ngModel)]="property.maplocation" [ngModelOptions]="{standalone: true}">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputZip" class="form-label">Floor Plans</label>
-                    <input type="text" class="form-control" [(ngModel)]="property.floor" [ngModelOptions]="{standalone: true}">
                 </div>
                 <div class="col-md-6">
                     <label for="inputZip" class="form-label">Amenities</label>
