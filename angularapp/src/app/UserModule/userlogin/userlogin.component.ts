@@ -23,6 +23,10 @@ export class UserloginComponent {
   }
   
   onUserlogin(email:string,password:string){
+    if (!this.isEmailValid(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
      let user = {email,password};
      this.userservicedata.loginUser(user).subscribe(data=>{
       console.log(data)
@@ -35,5 +39,10 @@ export class UserloginComponent {
      },error=>alert('Incorrect Username or Password'))
   }
   
-  
+  // Email validation using a regular expression
+ isEmailValid(email: string): boolean {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
 }

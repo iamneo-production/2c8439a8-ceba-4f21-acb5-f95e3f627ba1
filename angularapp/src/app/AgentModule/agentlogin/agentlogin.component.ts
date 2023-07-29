@@ -25,6 +25,10 @@ export class AgentloginComponent {
 
   
   onAgentlogin(email:string,password:string){
+    if (!this.isEmailValid(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
      let agent = {email,password};
      this.agentdataservice.loginAgent(agent).subscribe(data=>{
       console.log(data)
@@ -38,4 +42,10 @@ export class AgentloginComponent {
      },error=>alert('Incorrect Username or Password'))
   }
   
+  // Email validation using a regular expression
+  isEmailValid(email: string): boolean {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
 }

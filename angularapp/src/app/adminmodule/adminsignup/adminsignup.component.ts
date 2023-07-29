@@ -23,6 +23,10 @@ else{
 }
 
 onAdminlogin(name:string,email:string,password:string){
+  if (!this.isEmailValid(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
   let admin = {name,email,password};
   this.admindataservice.signupAdmin(admin).subscribe(data=>{
     // this.router.navigate(['/adminhome']);
@@ -32,5 +36,13 @@ onAdminlogin(name:string,email:string,password:string){
   //  console.log(data)
    alert('Account Created Succesfullly')
   })
+  this.router.navigate(['/adminlogin']);
 }
+
+// Email validation using a regular expression
+isEmailValid(email: string): boolean {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
 }

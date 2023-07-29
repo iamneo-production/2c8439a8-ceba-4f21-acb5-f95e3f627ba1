@@ -24,6 +24,11 @@ export class AdminloginComponent {
 
    
   onAdminlogin(email:string,password:string){
+    if (!this.isEmailValid(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
     let admin = {email,password};
     this.admindataservice.loginAdmin(admin).subscribe(data=>{
     //  console.log(data)
@@ -34,4 +39,11 @@ export class AdminloginComponent {
      localStorage.setItem('loginstatus','loggedin');
     },error=>alert('Incorrect Username or Password'))
  }
+
+ // Email validation using a regular expression
+ isEmailValid(email: string): boolean {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
 }

@@ -24,6 +24,11 @@ else{
 
 
 onsignupAgent(name:string,phone:string,profileImageUrl:string,email:string,password:string){
+  if (!this.isEmailValid(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
   let agent = {name,phone,profileImageUrl,email,password};
   this.agentdataservice.signupAgent(agent).subscribe(data=>{
    console.log(data);
@@ -34,5 +39,13 @@ onsignupAgent(name:string,phone:string,profileImageUrl:string,email:string,passw
    localStorage.setItem('profileImageUrl',data.profileImageUrl);
    localStorage.setItem('agentemail',data.email);
   })
+  this.router.navigate(['/agentlogin']);
 }
+
+// Email validation using a regular expression
+isEmailValid(email: string): boolean {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
 }

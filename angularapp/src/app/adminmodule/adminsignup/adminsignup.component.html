@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-12">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" #email>
+                    <input type="email" class="form-control" #email required>
                 </div>
                 <div class="col-md-12">
                     <label class="form-label">Password</label>
@@ -25,7 +25,7 @@
                   </div>
 
                 <div>
-                  <button class="btn btn-primary col-12 mb-2"  (click)="onAdminlogin(name.value,email.value,password.value)" routerLink="/adminlogin">Signup</button>
+                  <button class="btn btn-primary col-12 mb-2"  (click)="onAdminlogin(name.value,email.value,password.value)">Signup</button>
                 </div> 
                 </form>
           </div>

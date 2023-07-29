@@ -23,6 +23,10 @@ else{
 }
 
 onUsersignup(email:string,mobileNumber:string,username:string,password:string){
+  if (!this.isEmailValid(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
   let user = {username,mobileNumber,email,password};
   this.userservicedata.signupUser(user).subscribe(data=>{
    console.log(data)
@@ -32,5 +36,13 @@ onUsersignup(email:string,mobileNumber:string,username:string,password:string){
    localStorage.setItem('mobileNumber',data.mobileNumber);
    localStorage.setItem('username',data.username);
   })
+  this.router.navigate(['/userlogin']);
 }
+
+// Email validation using a regular expression
+isEmailValid(email: string): boolean {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
 }
