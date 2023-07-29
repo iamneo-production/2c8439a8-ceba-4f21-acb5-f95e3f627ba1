@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import com.example.springapp.model.Agent;
 import com.example.springapp.service.AgentService;
 @RestController
-@CrossOrigin(origins = "https://8081-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
+@CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/")  //Suganya
+
 @RequestMapping
 public class AuthController {
 

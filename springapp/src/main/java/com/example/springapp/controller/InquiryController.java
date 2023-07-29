@@ -11,7 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/inquiries")
-@CrossOrigin(origins = "https://8081-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
+
+@CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/")  //Suganya
+
 public class InquiryController {
 
     @Autowired

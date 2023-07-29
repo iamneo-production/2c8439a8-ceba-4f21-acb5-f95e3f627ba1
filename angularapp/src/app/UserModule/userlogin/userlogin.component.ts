@@ -31,6 +31,7 @@ export class UserloginComponent {
       localStorage.setItem('username',data.username);
       localStorage.setItem('useremail',data.email);
       localStorage.setItem('mobileNumber',data.mobileNumber);
+      localStorage.setItem('loginstatus','loggedin');
      },error=>alert('Incorrect Username or Password'))
   }
   

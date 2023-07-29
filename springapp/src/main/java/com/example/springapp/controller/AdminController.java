@@ -11,7 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admins") // Update the URL mapping to "/admins"
-@CrossOrigin(origins = "https://8081-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/")  //Vasanth
+
+@CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/")  //Suganya
+
 public class AdminController {
     @Autowired
     private AdminService adminService; // Change the service to AdminService

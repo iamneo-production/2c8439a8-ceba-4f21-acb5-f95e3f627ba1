@@ -8,11 +8,14 @@ import { Inquiry } from '../model/inquiry';
   providedIn: 'root'
 })
 export class InquirydataService {
-
   
-    //Vasanth
-    private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
-    private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/"; 
+    // //Vasanth
+    // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
+    // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/"; 
+
+    //Suganya
+    private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries";  
+    private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/"; 
 
   constructor(private httpClient: HttpClient){}
   
@@ -35,6 +38,7 @@ export class InquirydataService {
 
   deleteInquiry(InquiryId: any): Observable<Inquiry[]>{
     return this.httpClient.delete<Inquiry[]>(`${this.getbyidUrl}/${InquiryId}`);
+
   }
 }
 
