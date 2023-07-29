@@ -26,7 +26,7 @@ export class AdminloginComponent {
   onAdminlogin(email:string,password:string){
     let admin = {email,password};
     this.admindataservice.loginAdmin(admin).subscribe(data=>{
-     console.log(data)
+    //  console.log(data)
      this.router.navigate(['/adminhome']);
      localStorage.setItem('adminid',data.id);
      localStorage.setItem('adminname',data.name);

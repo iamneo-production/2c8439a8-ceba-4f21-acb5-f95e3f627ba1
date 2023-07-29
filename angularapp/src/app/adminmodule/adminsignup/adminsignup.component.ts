@@ -29,7 +29,7 @@ onAdminlogin(name:string,email:string,password:string){
     localStorage.setItem('adminid',data.id);
     localStorage.setItem('adminname',data.name);
     localStorage.setItem('adminemail',data.email);
-   console.log(data)
+  //  console.log(data)
    alert('Account Created Succesfullly')
   })
 }
