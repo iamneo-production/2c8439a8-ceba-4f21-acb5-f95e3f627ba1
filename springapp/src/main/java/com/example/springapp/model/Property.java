@@ -57,9 +57,6 @@ public class Property {
     @Column(name = "Amenities")
     private String amenities;
 
-    @Column(name = "Agents")
-    private String agents;
-
     @Column(name = "AgentId")
     private String agentid;
 }
