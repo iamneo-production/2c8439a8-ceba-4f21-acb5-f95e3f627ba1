@@ -7,6 +7,7 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UserdataService {
+<<<<<<< HEAD
 
   //Vasanth
   // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users";  
@@ -70,6 +71,14 @@ export class UserdataService {
   // private getpass =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/updatepass/"; 
   // private loginUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/login";  
   // private signupUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/signup";  
+=======
+  // Suganya
+  private getUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users";  
+  private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/"; 
+  private getpass =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/updatepass/"; 
+  private loginUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/login";  
+  private signupUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/signup";  
+>>>>>>> 5798f62667c34b18b42bc138295527ea4e1bb85b
 
    // Revan
   private getUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users";  

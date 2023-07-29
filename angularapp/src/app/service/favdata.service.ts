@@ -7,6 +7,7 @@ import { Favourite } from '../model/favourite';
   providedIn: 'root'
 })
 export class FavdataService {
+<<<<<<< HEAD
 
     
     //Vasanth
@@ -44,6 +45,12 @@ export class FavdataService {
     //Revan
     private getUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/favourites";  
     private getbyidUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/favourites/"; 
+=======
+    
+    //Suganya
+    private getUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/favourites";  
+    private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/favourites/"; 
+>>>>>>> 5798f62667c34b18b42bc138295527ea4e1bb85b
 
   constructor(private httpClient: HttpClient) { }
 

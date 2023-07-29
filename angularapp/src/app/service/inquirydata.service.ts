@@ -9,6 +9,7 @@ import { Inquiry } from '../model/inquiry';
 })
 export class InquirydataService {
 
+<<<<<<< HEAD
   
     //Vasanth
     // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
@@ -45,6 +46,11 @@ export class InquirydataService {
     //Revan
     private getUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
     private getbyidUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/"; 
+=======
+    //Suganya
+    private getUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries";  
+    private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/inquiries/"; 
+>>>>>>> 5798f62667c34b18b42bc138295527ea4e1bb85b
 
   constructor(private httpClient: HttpClient){}
   

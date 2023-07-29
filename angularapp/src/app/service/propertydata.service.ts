@@ -9,6 +9,7 @@ import { Property } from '../model/property';
 export class PropertydataService {
   getPropertyById: any;
 
+<<<<<<< HEAD
     //Vasanth
     // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties";  
     // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/"; 
@@ -54,6 +55,12 @@ export class PropertydataService {
     private getbyidUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/"; 
     private getbyagentidUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/getbyAgentid/"; 
 
+=======
+    //Suganya
+    private getUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties";  
+    private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/"; 
+    private getbyagentidUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/getbyAgentid/"; 
+>>>>>>> 5798f62667c34b18b42bc138295527ea4e1bb85b
 
   constructor(private httpClient: HttpClient){}
   

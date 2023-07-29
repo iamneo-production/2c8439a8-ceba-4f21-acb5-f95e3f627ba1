@@ -8,6 +8,7 @@ import { Admin } from '../model/admin';
 })
 export class AdmindataService {
 
+<<<<<<< HEAD
 
   // //Vasanth"
   // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins";  
@@ -63,6 +64,13 @@ export class AdmindataService {
   private loginUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/login";  
   private signupUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/signup";  
 
+=======
+  //Suganya
+  private getUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins";  
+  private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/"; 
+  private loginUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/login";  
+  private signupUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/signup";  
+>>>>>>> 5798f62667c34b18b42bc138295527ea4e1bb85b
 
   constructor(private httpClient: HttpClient){}
 

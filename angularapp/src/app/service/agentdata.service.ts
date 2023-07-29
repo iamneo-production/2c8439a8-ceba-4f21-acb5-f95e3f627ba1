@@ -8,6 +8,7 @@ import { Agent } from '../model/agent';
 })
 export class AgentdataService {
 
+<<<<<<< HEAD
   //Vasanth
   // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents";  
   // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents/"; 
@@ -61,6 +62,13 @@ export class AgentdataService {
   private getbyidUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents/"; 
   private loginUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agent/login";  
   private signupUrl =  "https://8080-dedcbcbaedafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agent/signup"; 
+=======
+  //Suganya
+  private getUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents";  
+  private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents/"; 
+  private loginUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agent/login";  
+  private signupUrl =  "https://8080-deacaeadeadfafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agent/signup"; 
+>>>>>>> 5798f62667c34b18b42bc138295527ea4e1bb85b
 
   constructor(private httpClient: HttpClient){}
   
