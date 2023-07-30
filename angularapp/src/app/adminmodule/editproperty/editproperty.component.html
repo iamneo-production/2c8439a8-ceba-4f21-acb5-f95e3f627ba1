@@ -1,0 +1,160 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div class="searchbar">
+    <input type="text" class="fc form-control" placeholder="Search by location or type" [(ngModel)]="searchText" (ngModelChange)="search()">
+</div>
+
+<div class="container2">
+    <div class="row row-cols-1 row-cols-md-2 g-4 pb-4 card-con">
+        <div *ngIf="searchResults.length===0">
+            <h3>No search results found!</h3>
+        </div>
+        <div class="card-deck" *ngFor="let item of searchResults">
+            <div class="card bg">
+                <div class="row flex-column flex-xl-row">
+                    <div class="col">
+                       <img class="img-fluid h-100 " src={{item.imageUrls}} alt="Property img">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <p class="card-title fs-3 fw-bold">₹ {{item.price}}</p> <img *ngIf="item.status==='For Sale'" src="../../assets/Sale.png" style="height: 60px; width: 60px;"><img *ngIf="item.status==='Sold'" src="../../assets/sold.png" style="height: 60px; width: 60px;"><img *ngIf="item.status==='For Rent'" src="../../assets/rent.png" style="height: 60px; width: 60px;">
+                            </div>
+                            <span class="badge text-bg-primary mb-2 me-1 rounded-pill">{{item.type}}</span>
+                            <p class="card-title fw-bold">Id number : 
+                                <small class="text-muted">{{item.id}}</small>
+                            </p>
+                            <p class="card-title fw-bold">Location : 
+                                <small class="text-muted">{{item.location}}</small>
+                            </p>
+                            <p class="card-title fw-bold">Features : 
+                                <small class="text-muted">{{item.features}}</small>
+                            </p>
+                            <p class="card-title fw-bold">Agent : 
+                                <small class="text-muted">{{item.agents}}</small>
+                            </p>
+                            <div class="row  g-1">
+                                <button class="btn btn-primary col-7 me-2" data-bs-toggle="modal" data-bs-target="#editModal" (click)="onedit(item.id)">Edit</button>
+                                <button class="btn btn-danger col-4"  data-bs-toggle="modal" data-bs-target="#deleteModel" type="button" (click)="ondeleteclick(item.id)">Delete</button>
+                                <div class="modal fade" id="deleteModel" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Property</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          Are you sure to delete this property ?
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          <button type="button" class="btn btn-danger" (click)="ondelete()"  data-bs-dismiss="modal">Confirm Delete</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-lg" id="editModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-3" id="exampleModalLabel">Edit Property Here !</h1>
+        </div>
+        <div class="modal-body">
+
+            <form class="row g-3 w-100">
+                <div class="col-md-6">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.title" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Price</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.price" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Type</label>
+                    <select id="inputType" class="form-select" [(ngModel)]="property.type" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="House">House</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Condo">Condo</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Location</label>
+                    <select id="inputState" class="form-select" [(ngModel)]="property.location" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Tirupur">Tirupur</option>
+                        <option value="Mysore">Mysore</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Jammu">Jammu</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hydrabad">Hydrabad</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Status</label>
+                    <select id="inputState" class="form-select" [(ngModel)]="property.status" [ngModelOptions]="{standalone: true}">
+                        <option selected>Choose...</option>
+                        <option value="For Sale">Sale</option>
+                        <option value="Sold">Sold</option>
+                        <option value="For Rent">Rent</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputCity" class="form-label">Features</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.features" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.address" [ngModelOptions]="{standalone: true}">
+                </div>
+            
+                <div class="col-md-3">
+                    <label for="inputCity" class="form-label">Image Url</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.imageUrls" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-3">
+                    <label for="inputZip" class="form-label">Video Url</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.videoUrls" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Agent</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.agents" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Map Location</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.maplocation" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Floor Plans</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.floor" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Amenities</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.amenities" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputZip" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" [(ngModel)]="property.description" [ngModelOptions]="{standalone: true}"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+         <div class="close"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div>
+          <button type="button" class="btn btn-primary" (click)="onSubmit()" data-bs-dismiss="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

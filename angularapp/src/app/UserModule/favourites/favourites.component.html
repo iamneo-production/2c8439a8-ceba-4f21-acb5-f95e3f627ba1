@@ -1,0 +1,41 @@
+<app-usernavbar></app-usernavbar>
+<div class="container2">
+<div class="row row-cols-1 row-cols-md-2 g-4 pb-4 card-con">
+    <div class="card-deck" *ngFor="let favourite of propertylist">
+        <div class="card bg h-100">
+            <div class="row flex-column flex-xl-row">
+                <div class="col">
+                   <img class="img-fluid h-100" src={{favourite.imageUrls}} alt="Property img">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <p class="card-title fw-bold">
+                             <small class="badge text-bg-primary rounded-pill">PropertyId : {{favourite.id}}</small>
+                            <small *ngIf="favourite.status==='For Sale'" class="badge text-bg-primary rounded-pill ms-2">{{favourite.status}}</small>
+                            <small *ngIf="favourite.status==='For Rent'" class="badge text-bg-primary rounded-pill ms-2">{{favourite.status}}</small>
+                            <small *ngIf="favourite.status==='Sold'" class="badge text-bg-danger rounded-pill ms-2">{{favourite.status}}</small>
+                        </p>
+                        <p class="card-title fs-5 fw-bold">
+                            {{favourite.title}}
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <p class="card-title fs-5 fw-bold">₹ {{favourite.price}}</p> 
+                        </div>
+                        <p class="card-title fs-6 fw-bold"> Type : 
+                            <small class="text-muted"> {{favourite.type}}</small>
+                        </p>
+
+                        <div class="row  g-1">
+                            <button class="btn btn-primary col-7 me-2"  (click)="propertyDetails(favourite.id)">Go to Property</button>
+                            <button class="btn btn-danger col-4"  (click)="removeFromFavourites(favourite.id)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="noprop" *ngIf="favourites.length === 0">
+        <p>No properties added to favorites yet.</p>
+    </div>
+</div>
