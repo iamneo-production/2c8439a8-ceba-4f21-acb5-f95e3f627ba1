@@ -1,0 +1,44 @@
+
+.nav-item,
+.nav-link {
+    font-size: 20px;
+    background-color: transparent;
+    border-color: black;
+    cursor: pointer;
+    padding: 10px;
+    color: black;
+
+}
+
+.nav-link:hover {
+    color: rgb(130, 130, 130);
+}
+
+
+.d-flex {
+    width: 39%;
+}
+
+.btn {
+    border: none;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.dropdown-menu {
+    margin-top: 10px;
+    margin-right: 10px;
+    
+}
+
+.dropdown-item{
+    font-size: larger;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: lightgrey;
+}

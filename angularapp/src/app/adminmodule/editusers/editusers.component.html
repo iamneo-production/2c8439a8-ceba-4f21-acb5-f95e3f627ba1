@@ -1,0 +1,91 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div class="table-responsive container2">
+  <div class="option">
+    <h3 class="list">User's List</h3>
+  </div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr class="a">
+        <th scope="col">Sl no.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr class="b" *ngFor="let item of userslist">
+        <td>{{item.userId}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.mobileNumber}}</td>
+        <td><button class="btn btn-danger w-50" data-bs-toggle="modal" data-bs-target="#deleteModel" (click)="ondeleteclick(item.userId)" type="button">Delete</button>
+          <div class="modal fade" id="deleteModel">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Delete User</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Are you sure to delete this User?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" (click)="ondeleteuser()"  data-bs-dismiss="modal">Confirm Delete</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        </td>
+      </tr>  
+    </tbody>
+  </table>
+</div>
+<br>
+<div class="table-responsive container2">
+    <div class="option">
+      <h3 class="list">Agent's List</h3>
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+            <tr class="a">
+                <th scope="col">Sl no.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="b" *ngFor="let item of agentslist">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+                <td><button class="btn btn-danger w-50" data-bs-toggle="modal" data-bs-target="#deleteModel1" (click)="ondeleteclick(item.id)" type="button">Delete</button>
+                  <div class="modal fade" id="deleteModel1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Agent</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Are you sure to delete this Agent?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-danger" (click)="ondeleteagent()"  data-bs-dismiss="modal">Confirm Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </tr>
+        </tbody>
+    </table>
