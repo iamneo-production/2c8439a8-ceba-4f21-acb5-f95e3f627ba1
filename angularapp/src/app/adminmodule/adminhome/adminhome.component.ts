@@ -20,12 +20,13 @@ export class AdminhomeComponent {
   constructor(private userdataService: UserdataService, 
     private agentdataService: AgentdataService,
     private propertydataService: PropertydataService,
-    private inquirydataService:InquirydataService) {}
+    private inquirydataService:InquirydataService){}
 
   ngOnInit(){
     this.getAllProperties();
     this.getAllAgents();
     this.getAllUsers();
+    this.getAllInquiries();
   }
   propertylist: Property[] = [];
 
