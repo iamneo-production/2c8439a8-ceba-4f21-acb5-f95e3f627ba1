@@ -30,6 +30,9 @@
                             <p class="card-title fw-bold">Features : 
                                 <small class="text-muted">{{item.features}}</small>
                             </p>
+                            <p class="card-title fw-bold">Agent : 
+                                <small class="text-muted">{{item.agents}}</small>
+                            </p>
                             <div class="row  g-1">
                                 <button class="btn btn-primary col-7 me-2" data-bs-toggle="modal" data-bs-target="#editModal" (click)="onedit(item.id)">Edit</button>
                                 <button class="btn btn-danger col-4"  data-bs-toggle="modal" data-bs-target="#deleteModel" type="button" (click)="ondeleteclick(item.id)">Delete</button>
@@ -60,7 +63,7 @@
 </div>
 
 <div class="modal fade modal-lg" id="editModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-3" id="exampleModalLabel">Edit Property Here !</h1>
@@ -124,15 +127,19 @@
                     <label for="inputZip" class="form-label">Video Url</label>
                     <input type="text" class="form-control" [(ngModel)]="property.videoUrls" [ngModelOptions]="{standalone: true}">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
+                    <label for="inputZip" class="form-label">Agent</label>
+                    <input type="text" class="form-control" [(ngModel)]="property.agents" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-md-6">
                     <label for="inputCity" class="form-label">Map Location</label>
                     <input type="text" class="form-control" [(ngModel)]="property.maplocation" [ngModelOptions]="{standalone: true}">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="inputZip" class="form-label">Floor Plans</label>
                     <input type="text" class="form-control" [(ngModel)]="property.floor" [ngModelOptions]="{standalone: true}">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="inputZip" class="form-label">Amenities</label>
                     <input type="text" class="form-control" [(ngModel)]="property.amenities" [ngModelOptions]="{standalone: true}">
                 </div>
