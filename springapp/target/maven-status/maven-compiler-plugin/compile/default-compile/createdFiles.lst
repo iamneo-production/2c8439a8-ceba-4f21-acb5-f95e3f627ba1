@@ -1,5 +1,5 @@
-com/example/springapp/controller/AgentController.class
 com/example/springapp/exception/ResourceNotFoundException.class
+com/example/springapp/controller/AgentController.class
 com/example/springapp/controller/InquiryController.class
 com/example/springapp/repository/AdminRepository.class
 com/example/springapp/model/LoginModel.class
@@ -20,8 +20,8 @@ com/example/springapp/model/Admin.class
 com/example/springapp/model/UserModel.class
 com/example/springapp/repository/UserInfoRepository.class
 com/example/springapp/service/UserInfoService.class
-com/example/springapp/repository/AgentRepository.class
 com/example/springapp/controller/AdminController.class
+com/example/springapp/repository/AgentRepository.class
 com/example/springapp/controller/FavouriteController.class
 com/example/springapp/repository/PropertyRepository.class
 com/example/springapp/model/Property.class
