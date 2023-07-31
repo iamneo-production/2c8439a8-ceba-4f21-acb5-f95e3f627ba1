@@ -12,13 +12,13 @@
     color: #3b4cb8;
 }
 
-.btn{
+.btn-primary{
     background-color: #3b4cb8;
     color: white;
     border-radius: 10px;
 }
 
-.btn:hover{
+.btn-primary:hover{
     background-color: whitesmoke;
     color: #3b4cb8;
 

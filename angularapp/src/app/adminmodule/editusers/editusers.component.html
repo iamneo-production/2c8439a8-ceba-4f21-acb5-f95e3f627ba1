@@ -23,7 +23,7 @@
         <td>{{item.email}}</td>
         <td>{{item.mobileNumber}}</td>
         <td><button class="btn btn-danger w-50" data-bs-toggle="modal" data-bs-target="#deleteModel" (click)="ondeleteclick(item.userId)" type="button">Delete</button>
-          <div class="modal fade" id="deleteModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="deleteModel">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -41,8 +41,7 @@
             </div>
         </div>
         </td>
-      </tr>
-      
+      </tr>  
     </tbody>
   </table>
 </div>
@@ -70,7 +69,7 @@
                 <td>{{item.email}}</td>
                 <td>{{item.phone}}</td>
                 <td><button class="btn btn-danger w-50" data-bs-toggle="modal" data-bs-target="#deleteModel1" (click)="ondeleteclick(item.id)" type="button">Delete</button>
-                  <div class="modal fade" id="deleteModel1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="deleteModel1">
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">

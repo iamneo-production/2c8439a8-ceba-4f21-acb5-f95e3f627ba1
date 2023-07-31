@@ -46,7 +46,6 @@ public class PropertyService {
         property.setMaplocation(propertyDetails.getMaplocation());
         property.setFloor(propertyDetails.getFloor());
         property.setAmenities(propertyDetails.getAmenities());
-        property.setAgents(propertyDetails.getAgents());
         property.setAgentid(propertyDetails.getAgentid());
         return propertyRepository.save(property);
     }
