@@ -34,6 +34,7 @@ export class AgentloginComponent {
       localStorage.setItem('agentemail',data.email);
       localStorage.setItem('phone',data.phone);
       localStorage.setItem('profileImageUrl',data.profileImageUrl);
+      localStorage.setItem('loginstatus','loggedin');
      },error=>alert('Incorrect Username or Password'))
   }
   

@@ -11,19 +11,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/favourites")
+<<<<<<< HEAD
 @CrossOrigin(origins = "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/")  //Vasanth
 // @CrossOrigin(origins = "https://8081-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/")  //Revan
 // @CrossOrigin(origins = "https://8081-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/")  //Anshi
 // @CrossOrigin(origins = "https://8081-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/")  //Raas
+=======
+
+@CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/")  //Suganya
+
+>>>>>>> f135a4cf2a2c6158d88d2b29fa2dd43e71c2bbb9
 public class FavouriteController {
     @Autowired
     private FavouriteService favouriteService;
-
-    // Get all favourites
-    @GetMapping
-    public List<Favourite> getAllFavourites() {
-        return favouriteService.getAllFavourites();
-    }
 
     // Create a new favourite
     @PostMapping
@@ -33,22 +33,15 @@ public class FavouriteController {
 
     // Get favourite by id
     @GetMapping("/{id}")
-    public ResponseEntity<Favourite> getFavouriteById(@PathVariable long id) {
-        Favourite favourite = favouriteService.getFavouriteById(id);
+    public ResponseEntity<List<Favourite>> getFavouriteByUserId(@PathVariable long id) {
+        List<Favourite> favourite = favouriteService.getAllByUserId(id);
         return ResponseEntity.ok(favourite);
-    }
-
-    // Update favourite by id
-    @PutMapping("/{id}")
-    public ResponseEntity<Favourite> updateFavourite(@PathVariable long id, @RequestBody Favourite favouriteDetails) {
-        Favourite updatedFavourite = favouriteService.updateFavourite(id, favouriteDetails);
-        return ResponseEntity.ok(updatedFavourite);
     }
 
     // Delete favourite by id
     @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteFavouriteById(@PathVariable long id) {
-        favouriteService.deleteFavouriteById(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<Favourite> deleteFavouriteById(@PathVariable long id) {
+        Favourite favourite = favouriteService.deleteFavouriteById(id);
+        return new ResponseEntity<>(favourite,HttpStatus.OK);
     }
 }

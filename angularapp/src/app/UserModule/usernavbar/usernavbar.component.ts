@@ -16,6 +16,7 @@ constructor(private router:Router){}
     localStorage.removeItem("username");
     localStorage.removeItem("useremail");
     localStorage.removeItem("mobileNumber");
+    localStorage.removeItem('loginstatus');
     this.router.navigate(['/userlogin']);
   }
 }

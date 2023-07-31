@@ -38,7 +38,8 @@ export class AgentaddComponent {
   isValid():boolean{
     if(this.property.title != '' && this.property.description != '' && this.property.address != '' 
     && this.property.price != '' && this.property.type != '' && this.property.location != '' && this.property.status != '' 
-    && this.property.imageUrls != ''&& this.property.videoUrls != '' && this.property.agents != '' && this.property.features != ''){
+    && this.property.imageUrls != ''&& this.property.videoUrls != '' && this.property.agents != '' && this.property.features != ''
+    && this.property.floor != ''&& this.property.amenities != '' && this.property.agentid != '' && this.property.maplocation != ''){
       return false;
     } 
     return true;

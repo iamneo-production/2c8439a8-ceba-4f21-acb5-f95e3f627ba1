@@ -82,4 +82,10 @@
     }
 }
 
+.cut{
+    text-align: start;
+}
 
+h1{
+    cursor: pointer;
+}

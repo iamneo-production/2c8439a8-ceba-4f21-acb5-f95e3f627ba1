@@ -1,11 +1,5 @@
 export interface Favourite{
-    id:string,
+    id:number,
     propertyid: string,
-    img:string,
-    type:string,
-    price:string,
-    name:string,
-    status:string
-
-    isAddedToFavourites?: boolean;
+    userid: string
 }

@@ -1,36 +1,27 @@
-div{
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+.searchbar{
+    margin: 5% 10% 0px 60px;
 }
-div input{
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border: none;
-    height: 3rem;
-    width:25rem;
-    background-color: #f1f1f1;
-    padding: 1.2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    outline:none;
+.fc{
+    text-align: center; 
+    border-top-left-radius: 15px;  
+    border-top-right-radius: 0px;  
+    border-bottom-left-radius: 15px;  
+    border-bottom-right-radius: 0px;  
+    border: 1px solid; 
+}
+.fc::placeholder{
+    color: #3b4cb8;
 }
 div button{
-    color:grey;
-    height: 3rem;
-    width: 5rem;
-    font-size: 1rem;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border: none;
-    background-color: #3b4cb8;
+    background-color:#3b4cb8;
     color: white;
-    opacity: 0.8;
-    outline: none;
+    width: 100px;
+    border: none;
+    border-top-right-radius: 15px;  
+    border-bottom-right-radius: 15px; 
 }
 div button:hover{
-    opacity: 1;
+    opacity: .9;
     cursor: pointer;
 }
   

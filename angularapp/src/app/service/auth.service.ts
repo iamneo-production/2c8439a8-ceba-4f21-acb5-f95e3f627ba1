@@ -11,6 +11,6 @@ export class AuthService {
   constructor() { }
 
   IsLoggedIn(){
-    return !!localStorage.getItem('Name');
+    return !!localStorage.getItem('loginstatus');
   }
 }

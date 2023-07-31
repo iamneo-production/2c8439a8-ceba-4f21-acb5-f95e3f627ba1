@@ -26,7 +26,7 @@ else{
 onsignupAgent(name:string,phone:string,profileImageUrl:string,email:string,password:string){
   let agent = {name,phone,profileImageUrl,email,password};
   this.agentdataservice.signupAgent(agent).subscribe(data=>{
-   console.log(data)
+   console.log(data);
    this.router.navigate(['/agenthome']);
    localStorage.setItem('id',data.id);
    localStorage.setItem('name',data.name);

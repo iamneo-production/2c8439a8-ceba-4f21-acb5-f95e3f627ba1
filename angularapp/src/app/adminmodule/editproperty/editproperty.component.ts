@@ -7,7 +7,7 @@ import { Property } from '../../model/property';
   styleUrls: ['./editproperty.component.css']
 })
 export class EditpropertyComponent {
-
+  searchResults: Property[] = [];
   propertylist: Property[] = [];
 
   property: Property= {
@@ -40,6 +40,7 @@ export class EditpropertyComponent {
   getAllProperties(){
     this.propertydataService.getProperties().subscribe(data=>{
       this.propertylist= data;
+      this.searchResults = data;
     })
   }
 
@@ -49,9 +50,10 @@ export class EditpropertyComponent {
     })
   }
   
-  ondelete(id:any){
+  ondelete(){
     this.propertydataService.deleteProperty(this.deleteid).subscribe(data=>{
       this.propertylist=data;
+      alert('Property deleted succesfully');
     })
   }
 
@@ -64,11 +66,25 @@ export class EditpropertyComponent {
   onSubmit(){
     this.propertydataService.updateProperty(this.property.id,this.property).subscribe(data=>{
       this.propertylist=data;
+      alert('Property data updated succesfully');
       window.location.reload();
     })
   }
 
   ondeleteclick(id:any){
     this.deleteid=id;
+   }
+
+   searchText: string = '';
+   search(){
+     if(this.searchText.trim()===''){
+       this.searchResults=this.propertylist;
+     }
+     else{
+       this.searchResults=this.propertylist.filter(property=>
+         property.location.toLowerCase().includes(this.searchText.toLowerCase()) ||
+         property.type.toLowerCase().includes(this.searchText.toLowerCase())
+     );
+     }
    }
 }

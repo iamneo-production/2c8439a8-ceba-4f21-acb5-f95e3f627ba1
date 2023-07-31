@@ -29,6 +29,17 @@ export class PropertydataService {
       // private getbyidUrl =      "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/properties/";
       // private getbyagentidUrl = "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/properties/getbyAgentid/";
 
+
+    //Vasanth
+    // private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties";  
+    // private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/"; 
+    // private getbyagentidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/properties/getbyAgentid/"; 
+
+    //Suganya
+    private getUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties";  
+    private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/"; 
+    private getbyagentidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/properties/getbyAgentid/"; 
+
   constructor(private httpClient: HttpClient){}
   
 
@@ -38,6 +49,10 @@ export class PropertydataService {
   getPropertybyAgentid(): Observable<Property[]>{
     let agentId = localStorage.getItem('id');
     return this.httpClient.get<Property[]>(`${this.getbyagentidUrl}/${agentId}`);
+<<<<<<< HEAD
+=======
+
+>>>>>>> f135a4cf2a2c6158d88d2b29fa2dd43e71c2bbb9
   }
   
   getProperty(propertyId: any): Observable<Property>{
@@ -46,15 +61,27 @@ export class PropertydataService {
   }
 
   updateProperty(propertyId: any,propertyBody: any): Observable<Property[]>{
+<<<<<<< HEAD
+=======
+
+>>>>>>> f135a4cf2a2c6158d88d2b29fa2dd43e71c2bbb9
     return this.httpClient.put<Property[]>(`${this.getbyidUrl}/${propertyId}`, propertyBody);
   }
   
   postProperty(propertyBody: any): Observable<Property>{
+<<<<<<< HEAD
     return this.httpClient.post<Property>(`${this.getbyidUrl}`, propertyBody);
+=======
+    return this.httpClient.post<Property>(`${this.getUrl}`, propertyBody);
+>>>>>>> f135a4cf2a2c6158d88d2b29fa2dd43e71c2bbb9
   }
 
   deleteProperty(propertyId: any): Observable<Property[]>{
     return this.httpClient.delete<Property[]>(`${this.getbyidUrl}/${propertyId}`);
+<<<<<<< HEAD
+=======
+
+>>>>>>> f135a4cf2a2c6158d88d2b29fa2dd43e71c2bbb9
   }
 }
 
