@@ -60,6 +60,25 @@ export class UserdataService {
   deleteUser(userId: any): Observable<any>{
     let userUrl = 'http://localhost:8080/users/'+userId;
     return this.httpClient.delete(userUrl);
-}
+
+  }
+  
+  updateUser(userId: any,userBody: any): Observable<User[]>{
+    return this.httpClient.put<User[]>(`${this.getbyidUrl}/${userId}`, userBody);
+  }
+  
+  postUser(userBody: any): Observable<User>{
+    return this.httpClient.post<User>(`${this.getbyidUrl}`, userBody);
+  }
+
+  loginUser(user:any): Observable<any>{
+      return this.httpClient.post(`${this.loginUrl}`,user);
+  }
+  signupUser(user:any): Observable<any>{
+      return this.httpClient.post(`${this.signupUrl}`,user);
+  }
+  updatePass(id:number,oldpass:string,newpass:string):Observable<any>{
+    return this.httpClient.put(`${this.getUrl}/${id}/${oldpass}/${newpass}`,null)
+  }
 }
 
