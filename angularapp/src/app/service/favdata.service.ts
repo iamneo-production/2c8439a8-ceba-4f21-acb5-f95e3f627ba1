@@ -46,5 +46,14 @@ export class FavdataService {
 
   deleteFavourite(FavouriteId: any): Observable<Favourite[]>{
     return this.httpClient.delete<Favourite[]>(`${this.getbyidUrl}/${FavouriteId}`);
+
   }
-}
+
+  getByUserId(id:number): Observable<any>{
+    return this.httpClient.get(`${this.getbyidUrl}/${id}`);
+  }
+
+  createFavourite(favourite:Favourite): Observable<any>{
+    return this.httpClient.post(`${this.getUrl}`,favourite);
+  }
+  }

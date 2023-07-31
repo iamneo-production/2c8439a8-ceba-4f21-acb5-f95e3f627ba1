@@ -3,8 +3,8 @@ com/example/springapp/exception/ResourceNotFoundException.class
 com/example/springapp/controller/InquiryController.class
 com/example/springapp/repository/AdminRepository.class
 com/example/springapp/model/LoginModel.class
-com/example/springapp/service/AgentService.class
 com/example/springapp/service/AdminService.class
+com/example/springapp/service/AgentService.class
 com/example/springapp/service/FavouriteService.class
 com/example/springapp/repository/FavouriteRepository.class
 com/example/springapp/controller/PropertyController.class

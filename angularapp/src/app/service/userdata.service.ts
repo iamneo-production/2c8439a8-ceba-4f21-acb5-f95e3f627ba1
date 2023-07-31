@@ -12,10 +12,10 @@ export class UserdataService {
  
 
   //Vasanth
-  private getUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/users";  
-  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
-  private loginUrl =    "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/user/login";  
-  private signupUrl =   "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";  
+  private getUrl =      "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/users";  
+  private getbyidUrl =  "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
+  private loginUrl =    "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/user/login";  
+  private signupUrl =   "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";  
 
   //Revan
   // private getUrl =       "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/users";  

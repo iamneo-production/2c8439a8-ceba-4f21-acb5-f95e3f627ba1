@@ -15,8 +15,8 @@ export class InquirydataService {
     // private getbyidUrl =  "https://8080-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/"; 
 
     //Vasanth
-    private getUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/inquiries";  
-    private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/";
+    private getUrl =      "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/inquiries";  
+    private getbyidUrl =  "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/inquiries/";
 
     //Revan
     // private getUrl =      "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/inquiries";  

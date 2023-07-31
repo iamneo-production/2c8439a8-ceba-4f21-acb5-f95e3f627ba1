@@ -11,7 +11,7 @@ export class AdmindataService {
 
 
   //Vasanth
-  private getUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admins";  
+  private getUrl =      "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admins";  
   private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admins/";  
   private loginUrl =    "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admin/login";  
   private signupUrl =   "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admin/signup"; 

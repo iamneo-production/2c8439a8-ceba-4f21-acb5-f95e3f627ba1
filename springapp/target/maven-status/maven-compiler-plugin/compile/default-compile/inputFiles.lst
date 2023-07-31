@@ -2,11 +2,11 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Property.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/InquiryRepository.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/PropertyRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Inquiry.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AdminController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/PropertyRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/UserModelController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/PropertyController.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AdminController.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/AdminService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/InquiryService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AgentController.java
@@ -23,6 +23,6 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Favourite.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/PropertyService.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/UserInfoRepository.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/AgentRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/UserModel.java
+/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/AgentRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/AdminRepository.java

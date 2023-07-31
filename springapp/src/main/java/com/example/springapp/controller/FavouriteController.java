@@ -11,16 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/favourites")
-<<<<<<< HEAD
 @CrossOrigin(origins = "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/")  //Vasanth
 // @CrossOrigin(origins = "https://8081-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/")  //Revan
 // @CrossOrigin(origins = "https://8081-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/")  //Anshi
 // @CrossOrigin(origins = "https://8081-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/")  //Raas
-=======
-
-@CrossOrigin(origins = "https://8081-deacaeadeadfafaaafbdbeaeaadbdbabf.project.examly.io/")  //Suganya
-
->>>>>>> f135a4cf2a2c6158d88d2b29fa2dd43e71c2bbb9
 public class FavouriteController {
     @Autowired
     private FavouriteService favouriteService;

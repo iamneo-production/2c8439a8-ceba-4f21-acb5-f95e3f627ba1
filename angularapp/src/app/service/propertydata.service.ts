@@ -9,9 +9,9 @@ import { Property } from '../model/property';
 export class PropertydataService {
 
       //Vasanth
-      private getUrl =          "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/properties";  
-      private getbyidUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/properties/";
-      private getbyagentidUrl = "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/properties/getbyAgentid/";
+      private getUrl =          "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/properties";  
+      private getbyidUrl =      "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/properties/";
+      private getbyagentidUrl = "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/properties/getbyAgentid/";
 
       //Revan
       // private getUrl =          "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/properties";  

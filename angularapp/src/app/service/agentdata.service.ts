@@ -9,10 +9,10 @@ import { Agent } from '../model/agent';
 export class AgentdataService {
 
   //Vasanth
-  private getUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agents";  
-  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agents/";
-  private loginUrl =    "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agent/login";  
-  private signupUrl =   "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agent/signup"; 
+  private getUrl =      "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agents";  
+  private getbyidUrl =  "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agents/";
+  private loginUrl =    "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agent/login";  
+  private signupUrl =   "https://8081-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agent/signup"; 
 
   //Revan
   // private getUrl =      "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/agents";  
