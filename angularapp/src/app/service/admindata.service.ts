@@ -9,14 +9,29 @@ import { Admin } from '../model/admin';
 export class AdmindataService {
 
 
-  //Vasanth"
-  private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins";  
-  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/";  
-  private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/";  
-  private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admins/";  
-  private loginUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/login";  
-  private signupUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/admin/signup";  
+  //Vasanth
+  private getUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admins";  
+  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admins/";  
+  private loginUrl =    "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admin/login";  
+  private signupUrl =   "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/admin/signup"; 
 
+  //Revan
+  // private getUrl =      "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/admins";  
+  // private getbyidUrl =  "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/admins/";  
+  // private loginUrl =    "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/admin/login";  
+  // private signupUrl =   "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/admin/signup"; 
+
+  //Anshi
+  // private getUrl =      "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/admins";  
+  // private getbyidUrl =  "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/admins/";  
+  // private loginUrl =    "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/admin/login";  
+  // private signupUrl =   "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/admin/signup"; 
+
+  //Raas
+  // private getUrl =      "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/admins";  
+  // private getbyidUrl =  "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/admins/";  
+  // private loginUrl =    "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/admin/login";  
+  // private signupUrl =   "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/admin/signup"; 
 
   constructor(private httpClient: HttpClient){}
 
@@ -29,7 +44,7 @@ export class AdmindataService {
   }
 
   deleteAdmin(adminId: any): Observable<Admin[]>{
-    return this.httpClient.delete<Admin[]>(`${this.deleteUrl}/${adminId}`);
+    return this.httpClient.delete<Admin[]>(`${this.getbyidUrl}/${adminId}`);
   }
 
   loginAdmin(admin:any): Observable<any>{
@@ -40,7 +55,7 @@ export class AdmindataService {
 }
 
   updateAdmin(adminId: any,adminBody: any): Observable<Admin[]>{
-    return this.httpClient.put<Admin[]>(`${this.updateUrl}/${adminId}`,adminBody);
+    return this.httpClient.put<Admin[]>(`${this.getbyidUrl}/${adminId}`,adminBody);
   }
   
 }

@@ -24,7 +24,7 @@ else{
 
 onUsersignup(email:string,mobileNumber:string,username:string,password:string){
   let user = {username,mobileNumber,email,password};
-  this.userservicedata.signupUser(user).subscribe(data=>{
+  this.userservicedata.signupUser(user).subscribe((data: { userId: string; email: string; mobileNumber: string; username: string; })=>{
    console.log(data)
    this.router.navigate(['/userhome']);
    localStorage.setItem('userId',data.userId);

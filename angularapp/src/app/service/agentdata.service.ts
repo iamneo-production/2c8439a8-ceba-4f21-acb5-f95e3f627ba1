@@ -9,12 +9,28 @@ import { Agent } from '../model/agent';
 export class AgentdataService {
 
   //Vasanth
-  private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents";  
-  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents/";  
-  private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents/";  
-  private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agents/"; 
-  private loginUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agent/login";  
-  private signupUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/agent/signup"; 
+  private getUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agents";  
+  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agents/";
+  private loginUrl =    "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agent/login";  
+  private signupUrl =   "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/agent/signup"; 
+
+  //Revan
+  // private getUrl =      "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/agents";  
+  // private getbyidUrl =  "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/agents/";
+  // private loginUrl =    "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/agent/login";  
+  // private signupUrl =   "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/agent/signup"; 
+
+  //Anshi
+  // private getUrl =      "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/agents";  
+  // private getbyidUrl =  "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/agents/";
+  // private loginUrl =    "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/agent/login";  
+  // private signupUrl =   "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/agent/signup"; 
+
+  //Raas
+  // private getUrl =      "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/agents";  
+  // private getbyidUrl =  "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/agents/";
+  // private loginUrl =    "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/agent/login";  
+  // private signupUrl =   "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/agent/signup"; 
 
   constructor(private httpClient: HttpClient){}
   
@@ -28,7 +44,7 @@ export class AgentdataService {
   }
 
   deleteAgent(agentId: any): Observable<Agent[]>{
-    return this.httpClient.delete<Agent[]>(`${this.deleteUrl}/${agentId}`);
+    return this.httpClient.delete<Agent[]>(`${this.getbyidUrl}/${agentId}`);
   }
 
   loginAgent(agent:any): Observable<any>{
@@ -39,7 +55,7 @@ export class AgentdataService {
 }
 
   updateAgent(agentId: any,agentBody: any): Observable<Agent[]>{
-    return this.httpClient.put<Agent[]>(`${this.updateUrl}/${agentId}`, agentBody);
+    return this.httpClient.put<Agent[]>(`${this.getbyidUrl}/${agentId}`, agentBody);
   }
   
 }

@@ -6,16 +6,32 @@ import { User } from '../model/user';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserdataService {
 
   //Vasanth
-  private getUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users";  
-  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
-  private deleteUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
-  private updateUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
-  private postUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/users/";  
-  private loginUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/login";  
-  private signupUrl =  "https://8080-bddebfabedaecdbaafaaafbdbcfcbaedbffbeeaadbbb.project.examly.io/user/signup";  
+  private getUrl =      "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/users";  
+  private getbyidUrl =  "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
+  private loginUrl =    "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/user/login";  
+  private signupUrl =   "https://8080-bddebfabedaecdbaafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";  
+
+  //Revan
+  // private getUrl =       "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/users";  
+  // private getbyidUrl =   "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
+  // private loginUrl =     "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/user/login";  
+  // private signupUrl =    "https://8080-dedcbcbaedafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";  
+
+  //Anshi
+  // private getUrl =       "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/users";  
+  // private getbyidUrl =   "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
+  // private loginUrl =     "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/user/login";  
+  // private signupUrl =    "https://8080-fcbcbadfadafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";  
+
+  //Raas
+  // private getUrl =       "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/users";  
+  // private getbyidUrl =   "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/users/";  
+  // private loginUrl =     "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/user/login";  
+  // private signupUrl =    "https://8080-eedfeafbdafaaafbdbeaeaadbdbabf.project.examly.io/user/signup";  
 
   constructor(private httpClient: HttpClient){}
   
@@ -29,15 +45,15 @@ export class UserdataService {
   }
 
   deleteUser(userId: any): Observable<User[]>{
-    return this.httpClient.delete<User[]>(`${this.deleteUrl}/${userId}`);
+    return this.httpClient.delete<User[]>(`${this.getbyidUrl}/${userId}`);
   }
   
   updateUser(userId: any,userBody: any): Observable<User[]>{
-    return this.httpClient.put<User[]>(`${this.updateUrl}/${userId}`, userBody);
+    return this.httpClient.put<User[]>(`${this.getbyidUrl}/${userId}`, userBody);
   }
   
   postUser(userBody: any): Observable<User>{
-    return this.httpClient.post<User>(`${this.postUrl}`, userBody);
+    return this.httpClient.post<User>(`${this.getbyidUrl}`, userBody);
   }
 
   loginUser(user:any): Observable<any>{
